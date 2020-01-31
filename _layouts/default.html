@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+	{% include header.html %}
+	<div class="left-bar">{% include nav.html %}</div>
+	<div>
+		<main>
+		<article>
+			{{ content }}
+		</article>
+		{% include footer.html %}
+	</main>
+	</div>
+</body>
+
+</html>
