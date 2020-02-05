@@ -12,8 +12,8 @@ Testing even more...
     Title {{post.title}} 
     </li>
     {% assign postyear = post.date | date: "%Y" %}
-    year: {{postyear | plus 100}}
-    {% if {{postyear | plus 0}} > 2018 %}
+    year: {{postyear | plus: 100}}
+    {% if {{postyear}} > 2018 %}
         wow
         <a href="{{ post.url }}">{{ post.title }}</a>
         
