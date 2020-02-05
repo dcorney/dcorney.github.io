@@ -1,7 +1,7 @@
 ---
 layout: post
 category: thoughts
-title: Automated fact checking
+title: Automated fact checking - how far can we go?
 ---
 
 I've spent quite a bit of time recently thinking about fully-automated fact checking. In particular, given a sentence, can we extract enough information from it to be able to verify this claim against some trusted data source? This is certainly possible in at least some cases: we have a working prototype at Full Fact, but it has a limited range.

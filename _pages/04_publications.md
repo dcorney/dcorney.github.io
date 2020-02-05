@@ -12,7 +12,13 @@ permalink: /publications/
 
 <h3>Peer-reviewed papers</h3>
 
-<P>Esquivel, J. Albakour D., Corney, D., Moussa S. and Martinez M. (2017)
+<P>
+Kiesel, J.,  Mestre, M., Shukla, R., Vincent, E., Adineh, P., Corney, D., Stein, B. and Potthast, M. (2019) "<a href="https://www.aclweb.org/anthology/S19-2145.pdf">Semeval-2019 task 4: Hyperpartisan News Detection</a>".
+Proceedings of the 13th International Workshop on Semantic Evaluation, pp. 829-839.
+<a href="https://pan.webis.de/semeval19/semeval19-web/">Task page</a>
+</P>
+
+<P>Esquivel, J., Albakour D., Corney, D., Moussa S. and Martinez M. (2017)
 "On the Long-tail Entities in News" in 39th European Conference on Information Retrieval Research (ECIR2017). <a href="http://research.signalmedia.co/assets/long-tail-entities_CRC.pdf">Pre-print</a></P>
 
 <P>Corney, D., Albakour D., Martinez M. and Moussa S. (2016)
