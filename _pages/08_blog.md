@@ -7,10 +7,11 @@ permalink: /Blog/
 
 <ul>
   {% for post in site.posts %}
-    <li>
-      {% if post.year > 2018>%}
+      {% if post.year > 2018%}
+        <li>    
         <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
       {% endif %}
-    </li>
+    
   {% endfor %}
 </ul>
