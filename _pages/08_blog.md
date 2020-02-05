@@ -13,6 +13,12 @@ Testing some more...
     </li>
     {% assign postyear = post.date | date: "%Y" %}
     year: {{postyear}}
+    {% if {{postyear}} > 2018 %}
+        <li>    
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+    {% endif %}
+    
     
    
   {% endfor %}
