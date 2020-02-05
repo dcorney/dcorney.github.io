@@ -11,7 +11,7 @@ Testing even more 8...
     <li>
     Title {{post.title}} 
     </li>
-    {% assign postyear = post.date | date: "%Y" %}
+    {% assign postyear = post.date | date: "%Y" | plus: 0 %}
     year: {{postyear | plus: 100}}
     {% if {{postyear}} > 2018 %}
         wow
