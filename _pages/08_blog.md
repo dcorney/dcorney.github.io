@@ -4,22 +4,16 @@ title: Thoughts
 permalink: /Blog/
 ---
 
-Testing even more 8...
+Testing even more 9...
 
 <ul>
   {% for post in site.posts %}
-    <li>
-    Title {{post.title}} 
-    </li>
     {% assign postyear = post.date | date: "%Y" | plus: 0 %}
-    year: {{postyear | plus: 100}}
     {% if {{postyear}} > 2018 %}
-        wow
+    <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
         
-    {% endif %}
-    
-    
-   
+    {% endif %}   
   {% endfor %}
 </ul>
