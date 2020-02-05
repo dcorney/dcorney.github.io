@@ -14,16 +14,17 @@ Update: looking back at this in early 2020, and the code methods have been surpa
 
 <ul>
   {% for post in site.posts %}
-    <li>
-      {% if post.year < 2018%}
+    {% assign postyear = post.date | date: "%Y" %}
+    {% if {{postyear}} < 2018 %}
+      <li>
         {% if post.category == 'explanation' %}
-        <i>	
+          <i>	
         {% endif %}
         <a href="{{ post.url }}">{{ post.title }}</a>
         {% if post.category == 'explanation' %}
-        </i>	
+          </i>	
         {% endif %}
-      {% endif %}
-    </li>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>

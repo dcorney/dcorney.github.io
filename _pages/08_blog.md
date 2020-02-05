@@ -7,7 +7,8 @@ permalink: /Blog/
 
 <ul>
   {% for post in site.posts %}
-      {% if post.year > 2018%}
+    {% assign postyear = post.date | date: "%Y" %}
+    {% if {{postyear}} > 2018 %}
         <li>    
         <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
