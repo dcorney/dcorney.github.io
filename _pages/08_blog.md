@@ -4,7 +4,7 @@ title: Thoughts
 permalink: /Blog/
 ---
 
-Testing even more...
+Testing even more 8...
 
 <ul>
   {% for post in site.posts %}
