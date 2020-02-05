@@ -7,13 +7,14 @@ permalink: /Blog/
 
 <ul>
   {% for post in site.posts %}
+    Title {{post.title}}
     {% assign postyear = post.date | date: "%Y" %}
-    {{postyear}}
+    year {{postyear}}
     {% if {{postyear}} > 2018 %}
         <li>    
         <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
-      {% endif %}
+    {% endif %}
     
   {% endfor %}
 </ul>
