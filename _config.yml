@@ -33,7 +33,7 @@ theme: minima
 kramdown:
   input: GFM
   
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
