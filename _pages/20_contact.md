@@ -11,8 +11,7 @@ Or via Twitter [@dcorney](https://twitter.com/dcorney)
 
 I'm also on [LinkedIn](https://www.linkedin.com/in/david-corney-5225583) and [Google Scholar](https://scholar.google.co.uk/citations?user=rwRmcP4AAAAJ&hl=en)
 
-Physically, I can be found at Signal Media during office hours:
-<br>32-38 Leman St., London, E1 8EW
+
 
 <br>
 <br>
