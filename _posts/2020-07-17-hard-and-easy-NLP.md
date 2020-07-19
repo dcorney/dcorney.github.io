@@ -5,7 +5,7 @@ title: Why are some NLP tasks so hard?
 
 ---
 
-*[Update at end](#update)*
+[Update at end](#update)
 
 Computers are now really good at [some](https://voicebot.ai/2020/07/09/facebook-builds-speech-recognition-engine-combining-51-languages-in-one-model/) [NLP](https://towardsdatascience.com/machine-translation-a-short-overview-91343ff39c9f) [tasks](https://www.theverge.com/2020/6/11/21287966/openai-commercial-product-text-generation-gpt-3-api-customers) but still struggle with others. 
 
