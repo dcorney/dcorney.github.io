@@ -27,6 +27,20 @@ Common-sense knowledge may be hard to encode in machines, but it's also hard for
 
 ---
 
+**Update** (July 20, 2020)
+
+Shortly after posting the above, I came across a new paper by Emily Bender and Alexander Koller[ "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data](https://www.semanticscholar.org/paper/Climbing-towards-NLU%3A-On-Meaning%2C-Form%2C-and-in-the-Bender-Koller/02eaaf87f9cae34cca398fed146079e6eeb1f868?p2df)". This says a lot of what I was thinking, but with far greater precision, confidence and supporting evidence (not surprising, given that it's written by two professors of linguistics!). A couple of points that particularly struck me:
+
+They contrast *form* as the expression of language, whether written, spoken or signed; versus *meaning*, which defines "the relation between the form and something external to language," including communicative intents. However much one analyses expressions in a language, one never acquires knowledge of how the language is used in practice. And this is why language models cannot model the significance of particular words in a particular context.
+
+A second idea from the paper distinguished two modes of research. First, "bottom-up" research, which is incrementally improving existing tools: climbing the hill you find yourself on. And second, "top-down" research, which is choosing which hill to be on in the first place. Language models are incredibly powerful, and getting better all the time. But where are they leading us? (Other than ever better GLUE benchmark scores?) And when will we realise we're on the wrong hill?
+
+Well worth a read.
+
+
+
+---
+
 Footnotes:
 
 [^lms]: NLP has made huge advances in recent years with the widespread adoption of language models such as [BERT](https://github.com/google-research/bert) and [GPT-3 ](https://github.com/openai/gpt-3). These are trained on millions of line of text and learn which words and sentences tend to follow each other. But they have no deeper model of the world around them.
