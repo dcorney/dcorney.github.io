@@ -5,7 +5,7 @@ title: Why are some NLP tasks so hard?
 
 ---
 
-
+*[Update at end](#update)*
 
 Computers are now really good at [some](https://voicebot.ai/2020/07/09/facebook-builds-speech-recognition-engine-combining-51-languages-in-one-model/) [NLP](https://towardsdatascience.com/machine-translation-a-short-overview-91343ff39c9f) [tasks](https://www.theverge.com/2020/6/11/21287966/openai-commercial-product-text-generation-gpt-3-api-customers) but still struggle with others. 
 
@@ -25,9 +25,9 @@ Common-sense knowledge may be hard to encode in machines, but it's also hard for
 
 
 
----
+### Update  
 
-**Update** (July 20, 2020)
+(July 20, 2020) 
 
 Shortly after posting the above, I came across a new paper by Emily Bender and Alexander Koller[ "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data](https://www.semanticscholar.org/paper/Climbing-towards-NLU%3A-On-Meaning%2C-Form%2C-and-in-the-Bender-Koller/02eaaf87f9cae34cca398fed146079e6eeb1f868?p2df)". This says a lot of what I was thinking, but with far greater precision, confidence and supporting evidence (not surprising, given that it's written by two professors of linguistics!). A couple of points that particularly struck me:
 
