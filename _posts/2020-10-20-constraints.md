@@ -32,6 +32,6 @@ Now when faced with large open-ended problems (my favourite kind) instead of thi
 
 
 
-[^ 2 ]: Turns out he actually meant "bottom notes", but never mind.
+[^2]: Turns out he actually meant "bottom notes", but never mind.
 [^1]: This doesn't always work as I'd hope...
 
