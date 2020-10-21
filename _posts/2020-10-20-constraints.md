@@ -10,7 +10,7 @@ title: Constrained creativity
 
 #### "Don't play the butter notes"
 
-I recently stumbled across a [fascinating talk by Herbie Hancock](https://www.youtube.com/watch?v=AkUNbe9sDpw). Apparently, back when he was playing in Miles Davis' sublime quintet, he got stuck in a rut: he felt he was always playing the same notes, the same patterns, expressing the same ideas. Then, mid-gig, Davis leaned over to him and said "Don't play the butter notes!" This obviously confused Hancock who eventually guessed that Davis meant "don't play the obvious, easy notes".
+I recently stumbled across a [fascinating talk by Herbie Hancock](https://www.youtube.com/watch?v=AkUNbe9sDpw). Apparently, back when he was playing in Miles Davis' sublime quintet, he got stuck in a rut: he felt he was always playing the same notes, the same patterns, expressing the same ideas. Then, mid-gig, Davis leaned over to him and said "Don't play the butter notes!" This obviously confused Hancock who eventually guessed that Davis meant "don't play the obvious, easy notes"[^2].
 
 In the video, Hancock then gives a nice explanation of scales and the importance of the 3rd and 7th to really identify the scale. They define whether it's major or minor, blues or whatever. So in some ways, that makes them the obvious, easy notes. So Hancock experimented with... not playing them! Of course, he still had to express the music, play the tunes, fit in with the rest of the band and entertain the audience, but he could no longer do it the obvious way. So, being a musical genius, he came up with new ways of playing.
 
@@ -32,5 +32,6 @@ Now when faced with large open-ended problems (my favourite kind) instead of thi
 
 
 
+[^ 2 ]: Turns out he actually meant "bottom notes", but never mind.
 [^1]: This doesn't always work as I'd hope...
 
