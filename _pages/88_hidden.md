@@ -1,20 +1,21 @@
 ---
 layout: page
-title: Thoughts (blog)
-permalink: /Blog/
+title: 
+permalink: /ideas/
 ---
 
 Some thoughts, as and when.
 
+
+
 <ul>
   {% for post in site.posts %}
     {% assign postyear = post.date | date: "%Y" | plus: 0 %}
-    {% if postyear > 2018 and postyear < 3000 %}
+    {% if postyear == 8888 %}
       <li>  
-      {{ post.date | date: "%d/%m/%Y" }} 
+        <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-        
+      
     {% endif %}   
   {% endfor %}
 </ul>

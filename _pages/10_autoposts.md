@@ -16,7 +16,7 @@ Update: looking back at this in early 2020, and the code methods have been surpa
 <ul>
   {% for post in site.posts %}
     {% assign postyear = post.date | date: "%Y" | plus: 0 %}
-    {% if {{postyear}} < 2018 %}
+    {% if postyear < 2018 %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
