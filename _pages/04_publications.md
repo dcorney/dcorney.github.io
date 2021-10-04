@@ -13,7 +13,15 @@ permalink: /publications/
 <h3>Peer-reviewed papers</h3>
 
 <P>
-Kiesel, J.,  Mestre, M., Shukla, R., Vincent, E., Adineh, P., Corney, D., Stein, B. and Potthast, M. (2019) "<a href="https://www.aclweb.org/anthology/S19-2145.pdf">Semeval-2019 task 4: Hyperpartisan News Detection</a>".
+
+Nakov, P., Corney, D., Hasanain, M., Alam, F., Elsayed, T., Barrón-Cedeño, A., Papotti, P., Shaar, S. and Da San Martino, G. (2021) 	<a href="https://arxiv.org/abs/2103.07769">Automated Fact-Checking for Assisting Human Fact-Checkers</a>. IJCAI 2021 Survey Track, Montreal, 2021.	
+
+<P>
+
+Donabauer, G., Kruschwitz, U. and Corney, D. <a href="https://www.researchgate.net/publication/350888509_Making_Sense_of_Subtitles_Sentence_Boundary_Detection_and_Speaker_Change_Detection_in_Unpunctuated_Texts">"Making Sense of Subtitles: Sentence Boundary Detection and Speaker Change Detection in Unpunctuated Texts</a> NLP Beyond Text workshop, Companion Proceedings of the Web Conference 2021, pp. 357-362.	
+
+<P>
+Kiesel, J.,  Mestre, M., Shukla, R., Vincent, E., Adineh, P., Corney, D., Stein, B. and Potthast, M. (2019) <a href="https://www.aclweb.org/anthology/S19-2145.pdf">Semeval-2019 task 4: Hyperpartisan News Detection</a>.
 Proceedings of the 13th International Workshop on Semantic Evaluation, pp. 829-839.
 <a href="https://pan.webis.de/semeval19/semeval19-web/">Task page</a>
 </P>
