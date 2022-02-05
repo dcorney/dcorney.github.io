@@ -43,15 +43,15 @@ So as we receive a steady stream of yesses and noes to a particular question, we
 
 Let's define :
 
-&nbsp; $C_y$ as the count of "yesses"
+&nbsp; C<sub>y</sub> as the count of "yesses"
 
-&nbsp; $C_n$ as the count of "noes"
+&nbsp; C<sub>n</sub> as the count of "noes"
 
-&nbsp; n = $C_y$+ $C_n$ is the total number of trials
+&nbsp; *n* = C<sub>y</sub> C<sub>n</sub> is the total number of trials
 
-&nbsp; q=0.99 is our confidence bound
+&nbsp; *q* = 0.99 is our confidence bound
 
-&nbsp; p=0.5 is the prior probability of a yes or a no
+&nbsp; *p* = 0.5 is the prior probability of a yes or a no
 
 Then the *critical value* is smallest integer such that the cumulative binomial distribution equals or exceeds the confidence bound. This can be calculated from the inverse survival function of the binomial. 
 
