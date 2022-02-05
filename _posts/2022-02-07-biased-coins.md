@@ -47,7 +47,7 @@ Let's define :
 
 &nbsp; C<sub>n</sub> as the count of "noes"
 
-&nbsp; *n* = C<sub>y</sub> C<sub>n</sub> is the total number of trials
+&nbsp; *n* = C<sub>y</sub> + C<sub>n</sub> is the total number of trials
 
 &nbsp; *q* = 0.99 is our confidence bound
 
