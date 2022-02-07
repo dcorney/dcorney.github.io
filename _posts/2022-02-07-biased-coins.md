@@ -1,16 +1,16 @@
 ---
 layout: post
 category: thoughts
-title: Crowdsourced data and biased coins
+title: Crowdsourcing labels and biased coins
 ---
 
 Crowdsourcing relies on the wisdom of the crowd: combining the opinions of many ordinary people often gives very reliable data. But how many people do we need to ask? It turns out that this problem was solved more than 300 years ago in Switzerland by one [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli).
 
-At [Full Fact](https://fullfact.org/), we've recently started using crowdsourcing to get more training data for a [couple](https://fullfact.org/get-involved/robo-challenge/) [of](https://fullfact.org/get-involved/claim-challenge/) AI projects. We're fortunate to have many generous supporters who are keen to give a little of their time. To keep things as simple as possible, we only ask direct yes/no answers. We show each question to lots of people and combine their responses to decide a final answer to each question, which we then use to train our models. 
+At [Full Fact](https://fullfact.org/), we've recently started using crowdsourcing to label more training data for a [couple](https://fullfact.org/get-involved/robo-challenge/) [of](https://fullfact.org/get-involved/claim-challenge/) AI projects. We're fortunate to have many generous supporters who are keen to give up some of their time to help us. To keep things as simple as possible, we only ask direct yes/no answers. We show each question to lots of people and combine their responses to decide a final answer to each question, which we then use to train our models. 
 
 This raises an interesting problem: how many individual answers do we need before we can be confident in the final aggregate answer? Suppose we have 20 responses to a question and 19 people said "yes" while one said "no": we'd be happy to take "yes" as our final answer. We'd assume the other person mis-read the question or clicked the wrong button or something. And we would stop asking that particular question: a 21st or 22nd answer would provide us with no new information and so be wasted effort.
 
-But suppose for another question that 12 of the first 20 responses are "yes" and 8 are "no". We could take a simple majority and label the example as "yes". Or we could say it's too close to call and label it as "don't know". But suppose we carried on collecting more answers from more people and after 40 responses, we had 30 "yesses" and only 10 "noes". We could then decide to take "yes" as the final answer with some confidence. We don't want to waste our supporters efforts, so we need to calculate **how few responses we need** to each question before we can decide the final answer with a high level of confidence. 
+But suppose for another question that 12 of the first 20 responses were "yes" and 8 were "no". We could take a simple majority and label the example as "yes". Or we could say it's too close to call and label it as "don't know". But suppose we carried on collecting more answers from more people and after 40 responses, we had 30 "yesses" and only 10 "noes". We could then decide to take "yes" as the final answer with some confidence. We don't want to waste our supporters efforts, so we need to calculate **how few responses we need** to each question before we can decide the final answer with a high level of confidence. 
 
 ## Is this coin biased?
 
@@ -33,10 +33,10 @@ This means we ask for lots of help with the difficult questions where there is d
  
 ## More formally...
 
-Here is a very brief summary of the methods, with snippets of code to make things more concrete ('cos that's how *I* think best). But if you want to understand more, please do follow the links for more reading and let me know what you think.
+For those interested, here is a very brief summary of the methods, with snippets of code to make things more concrete ('cos that's how I think best). But if you want to understand more, please do follow the links below for more reading and let me know what you think!
 
 Let's define:
-<p style="line-height: 1.15;">
+<p style="line-height: 1.18;">
 &nbsp; C<sub>y</sub> as the count of "yesses"<br>
 
 &nbsp; C<sub>n</sub> as the count of "noes"<br>
