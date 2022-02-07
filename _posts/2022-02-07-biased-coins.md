@@ -4,7 +4,7 @@ category: thoughts
 title: Crowdsourcing labels and biased coins
 ---
 
-Crowdsourcing relies on the wisdom of the crowd: combining the opinions of many ordinary people often gives very reliable data. But how many people do we need to ask? It turns out that this problem was solved more than 300 years ago in Switzerland by one [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli).
+Crowdsourcing relies on the wisdom of the crowd: combining the opinions of lots of different people often gives very reliable data. But how many people do we need to ask? It turns out that this problem was solved more than 300 years ago in Switzerland by one [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli).
 
 At [Full Fact](https://fullfact.org/), we've recently started using crowdsourcing to label more training data for a [couple](https://fullfact.org/get-involved/robo-challenge/) [of](https://fullfact.org/get-involved/claim-challenge/) AI projects. We're fortunate to have many generous supporters who are keen to give up some of their time to help us. To keep things as simple as possible, we only ask direct yes/no answers. We show each question to lots of people and combine their responses to decide a final answer to each question, which we then use to train our models. 
 
