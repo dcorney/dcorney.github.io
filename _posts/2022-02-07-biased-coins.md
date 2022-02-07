@@ -19,13 +19,13 @@ Perhaps surprisingly, this problem is equivalent to asking if a [coin is biased 
 * *the probability of a coin showing heads* is like *the probability that the next person to answer the question will say "yes"*.
 * *a coin biased towards heads* is like *a question that most people would answer "yes" to, if we asked enough people*.
 * *a coin biased towards tails* is like *a question that most people would answer "no" to, if we asked enough people*.
-* *an unbiased coin* is like *a question to which as may people answer "yes" as answer "no", no matter how many we ask*.
+* *an unbiased coin* is like *a question to which as many people answer "yes" as answer "no", no matter how many we ask*.
 
 
-This help us because investigating biased coins has a long history in statistics (along with dice and card games), so we can use well-established solutions to help us. The **binomial distribution**, defined by Jacob Bernoulli in the 18th century, is a statistical model of the likely outcomes of a sequence of yes/no events (called Bernoulli trials), such as coin tosses. A few simple equations can tell us things like:
+This helps us because investigating biased coins has a long history in statistics (along with dice and card games), so we can use well-established solutions to help us. The **binomial distribution**, defined by Jacob Bernoulli in the late-17th century, is a statistical model of the likely outcomes of a sequence of yes/no events (called Bernoulli trials), such as coin tosses. A few simple equations can tell us things like:
 * If I toss a coin 10 times, how many heads need to come up before I can be 95% confident that the coin is biased towards heads?
-* What's the probability of seeing exactly 5 heads after 10 tosses, if the coin is biased and shows heads with a probability of 0.4?
-* How many times will I have to toss this coin to have a 99% chance of seeing 5 heads?
+* What's the probability of seeing exactly 5 heads after 10 tosses, if the coin is biased and shows heads with a probability of 0.6?
+* How many times will I have to toss this coin to have a 99% chance of seeing at least 5 heads?
 
 So as we receive a steady stream of *yesses* and *noes* to a particular question, we now keep recalculating the probability that in the long run, the answer will converge to yes or no. And when that probability goes above a certain threshold of confidence, say 99%, we stop asking the question and move on to the next one.
 
@@ -70,10 +70,11 @@ In each case, the critical value is 18, meaning if we see 18 or more "yesses" ou
 
 ## Further reading
 
-[Checking whether a coin is fair](https://en.wikipedia.org/wiki/Checking_whether_a_coin_is_fair)
 
 [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) - come for the maths, stay for the family feuds!
 
-[Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution)
+[Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) - including the main equations
+
+[Checking whether a coin is fair](https://en.wikipedia.org/wiki/Checking_whether_a_coin_is_fair) 
 
 [Hypothesis Testing for Binomial Distribution](https://www.real-statistics.com/binomial-and-related-distributions/hypothesis-testing-binomial-distribution/) - some useful worked examples (esp. in Excel)
