@@ -37,5 +37,5 @@ For example, one critical factor in deciding if a claim can be checked is the av
 
 Many versions of the pipeline I've seen omit the last step completely, seeing "publish" as a trivial task that existing tools have already solved (email, blog posts, CRMs, etc). But fact checkers are journalists aiming to tell stories that communicate complex issues to a broad audience. It’s not just a case of clicking "post": checkworthiness and explanation are both influenced by the nature of the audience: is this for the general public? For a specific community? For interested or motivated parties, who already have a lot of background knowledge? Knowing who the audience is for this particular fact check will influence whether it is worth checking at all, and perhaps what kind of evidence is required.
 
-
+|<img src="/images/pipeline2.png" alt="fact checking as a messy pipeline" width="50%"/>
 
