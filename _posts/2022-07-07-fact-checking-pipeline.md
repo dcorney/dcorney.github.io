@@ -4,16 +4,16 @@ category: thoughts
 title: Fact checking is NOT a pipeline
 ---
 
-I work in automated fact checking: figuring out how to use technologies like AI and NLP to develop tools to support fact checkers, in my case at [Full Fact](https://fullfact.org).
+I work in [automated fact checking](https://fullfact.org/about/automated/): figuring out how to use technologies like AI and NLP to develop tools to support fact checkers.
 Over the last few years, I've read many papers and blog posts about the field and written one or two myself. 
-In many such pieces, the scene is set by talking about the "fact checking pipeline". This model breaks down the task of fact checking, as carried out by expert fact checking journalists, into a series of discrete steps with the aim of making the process easier to understand and potentially to automate, at least in part. This is a laudable aim and the pipeline view is really useful for motivating research work in each component in turn.
+Often, the scene is set by talking about the "fact checking pipeline". This model breaks down the task of fact checking, as carried out by expert fact checking journalists, into a series of discrete steps with the aim of making the process easier to understand and potentially to automate. This is a laudable aim and the pipeline view is really useful for motivating research work at each stage.
 
-But I'm increasingly convinced the pipeline is an oversimplification and that at some point, it will lead researchers up the wrong hill.
+But I'm increasingly convinced the fact checking pipeline is an oversimplification and that at some point, it will lead researchers up the wrong hill.
 
 
 ## The pipeline 
 
-Here's my version of the fact checking pipeline, which subsumes plenty of examples I've seen. (An appendix below lists some specific examples with references.)
+Here's one version of the fact checking pipeline, which subsumes plenty of examples I've seen. (An appendix below lists some specific examples with references.)
 
 |<img src="/images/pipeline1.png" alt="fact checking as a pipeline" width="800px"/>
 
@@ -22,7 +22,7 @@ From the top:
 2. Then we find *claims* in the text, meaning statements about the world that are either true or false.
 3. Then we select or rank these claims for "checkworthiness" to prioritize which claims are actually worth spending time fact checking.
 4. Next is finding evidence related to the claim, from the web, Wikipedia, government data portals, private databases or wherever you trust. This may include deciding on the "stance" of a piece of evidence: does it support or contradict the claim?
-5. Then the big one: deciding whether the evidence shows that the claim is actually true or false (or partly true, or mostly false or some other category.)
+5. Then the big one: deciding whether the evidence shows that the claim is actually true or false (or partly true, or mostly false or some other category).
 6. And finally, publishing the result and encouraging people to read it.
 
 Nice and simple!
@@ -38,9 +38,13 @@ Many versions of the pipeline I've seen omit the last step completely, seeing "p
 
 So if the explanation of why a claim is true or false is interesting, then that makes the claim itself more checkworthy. Conversely, if the evidence is trivial to retrieve and easy to interpret then it may not be worth the fact checker’s time to do anything: anyone reading the original claim can find the evidence themselves if they want to. 
 
-Trying to add these sorts of dependencies (and I'm sure there are plenty I've not thought of) to a pipeline leads to something a bit more messy, like the rest of life.
+Trying to add these sorts of dependencies (and I'm sure there are plenty I've not thought of) to a pipeline leads to something a bit more messy, like the rest of life:
 
 |<img src="/images/pipeline2.png" alt="fact checking as a messy pipeline" width="800px"/>
+
+So as we continue to develop new automated fact checking tools, let's not kid ourselves that we can just stick them end to end and solve everything. We'll still need a way of coordinating the whole process, and perhaps that's best left to the (human) experts.
+
+---
 
 ## Appendix
 
