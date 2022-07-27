@@ -1,7 +1,7 @@
 ---
 layout: post
 category: thoughts
-title: "Bad information" is not the same as "bad writing"
+title: 'Bad information' is not the same as 'bad writing'
 ---
 
 I've lost count of the number of papers I've read that implicitly equate "bad information" with "bad writing", and each one makes me a little crosser than the last. 
