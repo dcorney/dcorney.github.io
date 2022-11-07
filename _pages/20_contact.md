@@ -9,6 +9,8 @@ Please e-mail me at [dpacorney@gmail.com](mailto:dpacorney@gmail.com).
 
 Or via Twitter [@dcorney](https://twitter.com/dcorney)
 
+Or via <a rel="me" href="https://sigmoid.social/@dcorney">Mastodon</a>
+
 I'm also on [LinkedIn](https://www.linkedin.com/in/david-corney-5225583) and [Google Scholar](https://scholar.google.co.uk/citations?user=rwRmcP4AAAAJ&hl=en)
 
 
@@ -21,6 +23,8 @@ I'm also on [LinkedIn](https://www.linkedin.com/in/david-corney-5225583) and [Go
 Old email address, for people tracking me down...
 
 (Please don't use! I can't read any of these)
+
+david.corney@signalmedia.co
 
 david.corney.1@city.ac.uk
 
