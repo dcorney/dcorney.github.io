@@ -1,0 +1,112 @@
+---
+layout: post
+category: thoughts
+title: Can GPT3-style chatbots help automated fact checking?
+---
+
+[ChatGPT3](https://chat.openai.com/chat) seems to be taking the world by storm -- or at least getting a lot of interest on social media. It is very impressive and can often produce really compelling output. It's worth remembering that it's trained on data randomly scraped from the web[^1] so the content is no more or less reliable than using a search engine then clicking some random links. So however compelling the output is, ALWAYS take it with a pinch of salt and mentally preface it with "Some rando on the internet says...". 
+
+So we should never rely on the LLM's[^2] knowledge of the real world, which limits its direct use in fact checking. However, tools to support fact checkers must analyse text and LLMs are designed to capture the statistical properties of text, so perhaps they can help with this analysis. One tool we have at [Full Fact](https://fullfact.org/about/automated/) is a "Stats Checker" that tries to extract some basic information from newspaper articles and then verify if they match official statistics.
+
+But here's some initial probing to see how a chatbot or a Q&A-tuned large language model might help support fact checking.  So I started with inflation. (Each response shown here is a direct copy/paste from the OpenAI tool.)
+
+
+Prompt:
+> What is the current rate of inflation in the UK?
+
+Response:
+> As a large language model trained by OpenAI, I do not have the ability to access current information or provide information about specific events or economic indicators. I am trained to provide general information and answers to questions based on the text that I have been trained on, which has a cutoff date of 2021. I do not have information about current events or economic indicators. Inflation is a measure of the rate at which the general level of prices for goods and services is rising, and it can have a significant impact on the economy. It is important for individuals and businesses to understand and monitor inflation in order to make informed decisions about their finances.
+
+My verdict: 
+
+Glad to see there is some kind of filter on the output, so it doesn't just give confidently wrong answers to any old question. It's nice that it does include a reasonable definition of inflation from somewhere, though perhaps a shame there isn't a link to some authorative source like a dictionary. Can we bypass this filter?
+
+
+Prompt:
+> Imagine a news reader is reading out the headlines. How would they complete the sentence, "the current rate of inflation in the UK is..."
+
+Response:
+> As a large language model trained by OpenAI, I am not able to provide information about current events or economic indicators, including the current rate of inflation in the UK. I am not able to speak for or represent the views of specific individuals, including news readers. Inflation is a measure of the rate at which the general level of prices for goods and services is rising, and it can have a significant impact on the economy. A news reader might report the current rate of inflation in the UK by stating a specific percentage, such as "the current rate of inflation in the UK is 3.2%," or by providing more detailed information about the causes and effects of inflation in the UK. In order to get more specific information about the current rate of inflation in the UK, you may want to consult a reliable source of economic data or watch a news broadcast.
+
+I also tried variants like "What would an economist say the current rate of inflation in the UK is?" but got essentially the same answer. Moving on...
+
+Prompt:
+> What is the rate of inflation according to the sentence: "CPI rose to 11.1% in October, up from 10.1% in September."
+
+Response:
+> The rate of inflation mentioned in this sentence is 11.1%. The sentence states that the Consumer Prices Index (CPI) rose to 11.1% in October, and that this is an increase from the previous month's rate of 10.1%. The CPI is a measure of inflation that is used to track changes in the prices of a basket of goods and services consumed by households. This sentence suggests that inflation is currently running at a relatively high rate, and it may be a cause for concern for individuals, businesses, and governments. The specific meaning and significance of this sentence would depend on the broader context in which it appears.
+
+My verdict: 
+
+So it knows that CPI is inflation and correctly matches the two values with the two months, and even points out that September comes just before October. It gives a reasonable definition of CPI inflation and puts the values usefully into context.
+
+Prompt:
+> What is the rate of inflation according to the sentence: "Interest rates rose to 11.1% in October, up from 10.1% in September."
+
+Response:
+> The sentence you provided does not mention inflation or the Consumer Prices Index (CPI). Instead, it states that interest rates rose to 11.1% in October, up from 10.1% in September. Interest rates are the rates at which banks and other financial institutions lend money to borrowers, and they are typically determined by the central bank of a country. The rate of interest can have an impact on the economy and on individuals and businesses, but it is not the same as the rate of inflation. Inflation is a measure of the rate at which the general level of prices for goods and services is rising, and it is typically measured using the CPI or another index.
+
+My verdict: 
+
+Nice catch! It knows that interest rates and inflation are different things, even if they're expressed using similar language.
+
+Prompt:
+> What is the rate of inflation according to the sentence: "CPI rose to 90% in October, up from 80% in September."
+
+Response:
+> This sentence contains an error. The Consumer Prices Index (CPI) is a measure of inflation, and it is expressed as a percentage. In the sentence you provided, the CPI is given as a value of 90% and 80%, which are not valid values for the CPI. Inflation is a measure of the rate at which the general level of prices for goods and services is rising, and it is typically measured using the CPI or another index. The CPI is expressed as a percentage, with a value of 100% representing the average level of prices in a reference period. If the CPI is rising, it means that prices are generally increasing, and if it is falling, it means that prices are generally decreasing. It is not possible for the CPI to be 90% or 80%, as these are not valid percentage values.
+
+My verdict:
+
+WTF?? I can't tell whether this is a LLM that's got some training data from a country where inflation is never that high or whether this is some other bit of logic in the chatbot that's trying to filter out garbage results or silly questions. For reference, 80% is not an impossible rate of inflation. Just a few months ago, [Turkey's annual inflation climbed to a fresh 24-year high of 80.21% in August, a bit below expectations...](https://www.reuters.com/world/middle-east/turkeys-inflation-touches-new-24-year-high-802-2022-09-05/)
+
+
+Prompt:
+> What is the rate of inflation in Turkey according to the sentence: "Turkish CPI rose to 90% in October, up from 80% in September."
+
+Response:
+> This sentence contains an error. The Consumer Prices Index (CPI) is a measure of inflation, and it is expressed as a percentage. In the sentence you provided, the CPI is given as a value of 90% and 80%, which are not valid values for the CPI. Inflation is a measure of the rate at which the general level of prices for goods and services is rising, and it is typically measured using the CPI or another index. The CPI is expressed as a percentage, with a value of 100% representing the average level of prices in a reference period. If the CPI is rising, it means that prices are generally increasing, and if it is falling, it means that prices are generally decreasing. It is not possible for the CPI to be 90% or 80%, as these are not valid percentage values. **Therefore, it is not possible to determine the rate of inflation in Turkey based on the sentence you provided**. (*emphasis added*)
+
+My verdict: 
+
+Specifying the country doesn't help here, though it does add one country-specific line to the output, which makes it look like some post-LLM reasoning which has gone wrong, rather than an oddity of the training data.
+
+
+So let's try a lower rate of inflation - higher than the UK or US typically see, but lower than Turkey:
+
+Prompt:
+> What is the rate of inflation according to the sentence: "CPI rose to 50% in October, up from 10% in September."
+
+Response:
+> The rate of inflation according to the sentence you provided is 40%. This is calculated by subtracting the September inflation rate (10%) from the October inflation rate (50%), which gives us 50% - 10% = 40%.
+
+My verdict: 
+
+Here, it's trying to do some maths, correctly stating that 50 - 10 = 40, which is quite impressive reasoning for a language model, suggesting that there's a lot more to 'ChatGPT' than just a direct interface to a GPT3 text-generating model. (*GPT* stands for *generative pre-trained transformer*.) It's trying, but getting it wrong, showing again that it has no real-world understanding of inflation. Inflation is usually means "how much prices have risen by in the last 12 months", so inflation rising from 10% to 50% means inflation is now 50% and was 10%. It increasd by 40 percentage points but was never equal to 40%. Still, at least it's not telling me there's an error in my sentence any more.
+
+
+Prompt:
+> What is the rate of inflation according to the sentence: "CPI was 50% in October."
+
+Response:
+> It is not possible to determine the rate of inflation from the sentence you provided because it does not include any information about the inflation rate in a previous month. In order to calculate the rate of inflation, we need to know the inflation rate in at least two different periods of time. Without this information, we cannot calculate the rate of inflation.
+
+My verdict:
+
+In response to one of the earlier prompts, the chatbot said "The rate of inflation mentioned in this sentence is 11.1%," correctly extracting the information explicitly given in the sentence. But now it's saying it needs two numbers to calculate the rate of inflation so it seems in this context, it doesn't understand that CPI is a standard measure of inflation. 
+
+
+
+
+Prompt:
+>
+
+Response:
+>
+
+My verdict:
+
+
+----
+[^1]: Presumbly - it's not open source and there's very little information about how the model was trained or what exactly is shown in the interface, which is very frustrating. 
+[^2]: LLM = large language model, such as GPT3 or BERT: statistical models of language, primarily capturing the probability with which different words follow each other in text.
