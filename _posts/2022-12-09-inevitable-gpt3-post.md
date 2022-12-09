@@ -1,15 +1,18 @@
 ---
 layout: post
 category: thoughts
-title: Can GPT3-style chatbots help automated fact checking?
+title: Can ChatGPT3 help automated fact checking?
 ---
 
-[ChatGPT3](https://chat.openai.com/chat) seems to be taking the world by storm -- or at least getting a lot of interest on social media. It is very impressive and can often produce really compelling output. It's worth remembering that it's trained on data randomly scraped from the web[^1] so the content is no more or less reliable than using a search engine then clicking some random links. So however compelling the output is, ALWAYS take it with a pinch of salt and mentally preface it with "Some rando on the internet says...". Indeed, the front page does warn it "may occasionally generate incorrect information".
+[ChatGPT3](https://chat.openai.com/chat) seems to be taking the world by storm -- or at least getting a lot of interest on social media. It is genuinely impressive and can produce really compelling dialogue. It's worth remembering that it's trained on data randomly scraped from the web[^1] so the content is no more or less reliable than using a search engine then clicking some random links. So however compelling the output is, ALWAYS take it with a pinch of salt and mentally preface it with "Some rando on the internet says...". Indeed, the front page does warn it "may occasionally generate incorrect information".
 
-So we should never rely on the LLM's[^2] knowledge of the real world, which limits its direct use in fact checking. However, tools to support fact checkers must analyse text, and LLMs are designed to capture the statistical properties of text, so perhaps they can help with this work. For example, one tool we've developed at [Full Fact](https://fullfact.org/about/automated/) is a "Stats Checker", which extracts some basic information from newspaper articles and then verifies if the data matches official statistics.
+So clearly we should never rely on ChatGPT's knowledge of the real world, which limits its direct use in fact checking. However, tools to support fact checkers must analyse text, and LLM's[^2] like GPT are designed to capture the statistical properties of text, so perhaps they can help with this work. For example, one tool we've developed at [Full Fact](https://fullfact.org/about/automated/) is a "Stats Checker", which extracts some basic information from newspaper articles and then verifies if the data matches official statistics.
 
-So here's some initial probing to see how a chatbot or a large language model tuned for question answering (QA) might help support fact checking. The response to each prompt shown here is a direct copy/paste from the OpenAI web tool, with my comments underneath. ChatGPT is a dialogue system and some context is carried over, so the exact results depend on the recent history of prompts. I started with inflation. 
+So below is my initial probing to see how a chatbot or similar LLM might help support fact checking. The response to each prompt shown here is a direct copy/paste from the OpenAI web tool, with my comments underneath. ChatGPT is a dialogue system and some context is carried over, so the exact results depend on the recent history of prompts. And this is definitely not a systematic or scientific study!  
 
+I started with inflation. 
+
+## Answering simple questions
 
 Prompt:
 > What is the current rate of inflation in the UK?
