@@ -6,9 +6,9 @@ title: Can GPT3-style chatbots help automated fact checking?
 
 [ChatGPT3](https://chat.openai.com/chat) seems to be taking the world by storm -- or at least getting a lot of interest on social media. It is very impressive and can often produce really compelling output. It's worth remembering that it's trained on data randomly scraped from the web[^1] so the content is no more or less reliable than using a search engine then clicking some random links. So however compelling the output is, ALWAYS take it with a pinch of salt and mentally preface it with "Some rando on the internet says...". Indeed, the front page does warn it "may occasionally generate incorrect information".
 
-So we should never rely on the LLM's[^2] knowledge of the real world, which limits its direct use in fact checking. However, tools to support fact checkers must analyse text and LLMs are designed to capture the statistical properties of text, so perhaps they can help with this analysis. For example, one tool we've developed at [Full Fact](https://fullfact.org/about/automated/) is a "Stats Checker" that extracts some basic information from newspaper articles and then verifies if it matches official statistics.
+So we should never rely on the LLM's[^2] knowledge of the real world, which limits its direct use in fact checking. However, tools to support fact checkers must analyse text, and LLMs are designed to capture the statistical properties of text, so perhaps they can help with this work. For example, one tool we've developed at [Full Fact](https://fullfact.org/about/automated/) is a "Stats Checker", which extracts some basic information from newspaper articles and then verifies if the data matches official statistics.
 
-But here's some initial probing to see how a chatbot or a large language model tuned for question answering (QA) might help support fact checking.  So I started with inflation. Each response shown here is a direct copy/paste from the OpenAI tool, with my comments underneath.
+So here's some initial probing to see how a chatbot or a large language model tuned for question answering (QA) might help support fact checking. The response to each prompt shown here is a direct copy/paste from the OpenAI web tool, with my comments underneath. I started with inflation. 
 
 
 Prompt:
@@ -139,7 +139,9 @@ I think the underlying LLM, stripped away from the chatbot interface with its bl
 
 
 ----
-[^1]: Presumbly - it's not open source and there's very little information about how the model was trained or what exactly is shown in the interface, which is very frustrating. 
-[^2]: LLM = large language model, such as GPT3 or BERT: a statistical model of language, primarily capturing the probability with which different words follow each other in natural text.
+[^1]: Presumbly - it's not open source and there's very little information about how the model was trained, what training data was used, or what exactly is shown in the interface, all of which is very frustrating. 
+
+[^2]: LLM = **l**arge **l**anguage **m**odel, such as GPT3 or BERT: a statistical model of language, primarily capturing the probability with which different words follow each other in natural text.
+
 [^3]: Gangi Reddy, R., Chinthakindi, S. C., Fung, Y. R., Small, K., & Ji, H. (2022). A Zero-Shot Claim Detection Framework Using Question Answering. (Proceedings of the 29th International Conference on Computational Linguistics, 6927–6933.)[https://aclanthology.org/2022.coling-1.603]
 
