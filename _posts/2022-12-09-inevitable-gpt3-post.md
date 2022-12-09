@@ -93,7 +93,7 @@ My verdict:
 
 WTF?? I can't tell whether this is a LLM that's got relied on training data from countries where inflation is never very high or whether this is some other bit of logic in the chatbot that's trying to filter out garbage results or silly questions. It successfully processed exactly the same sentence but with smaller numbers, so it can't be the grammar that it's struggling with.
 
-Technically, inflation is measured using an index, such as CPI, and measuring by what ratio that index changes year to year (or month to month). This index is reset to 100 units (not %) periodically, and perhaps this is confusing the model? It sometimes confuses me. Examples of how inflation is discussed can be found in the [offical ONS report](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2022) or in any newspaper.
+Technically, inflation is measured using an index, such as CPI, and measuring by what ratio that index changes year to year (or month to month). This index is reset to 100 units (not %) periodically, and perhaps this is confusing the model? It sometimes confuses me. Examples of how inflation is discussed can be found in the [official ONS report](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2022) or in any newspaper.
 
 For clarity, 80% is not an impossible rate of inflation. Just a few months ago, [Turkey's annual inflation climbed to a fresh 24-year high of 80.21% in August, a bit below expectations...](https://www.reuters.com/world/middle-east/turkeys-inflation-touches-new-24-year-high-802-2022-09-05/). So let's try:
 
@@ -106,7 +106,7 @@ Response:
 
 My verdict: 
 
-Specifying the country doesn't help here, though it does add one country-specific line to the output. This again makes makes me think that some post-LLM reasoning has gone wrong, rather this being caused by an oddity of the training data.
+Specifying the country doesn't help here, though it does add one country-specific line to the output. This again makes me think that some post-LLM reasoning has gone wrong, rather this being caused by an oddity of the training data.
 
 ## Failures of reasoning 
 
@@ -120,7 +120,7 @@ Response:
 
 My verdict: 
 
-Here we have a model trained in textual language trying to do some maths, which is quite impressive. It correctly stating that 50 - 10 = 40, suggesting that there's a lot more to ChatGPT than just a direct interface to a GPT3 text-generating model[^3]. The maths is OK but the reasoning is totally wrong, showing again that it has no real-world understanding of inflation. Inflation means "how much prices have risen by in the last 12 months", so inflation rising from 10% to 50% means it has increasd by 40 percentage points but it was never equal to 40%. Still, at least it's not telling me there's an error in my sentence any more.
+Here we have a model trained in textual language trying to do some maths, which is quite impressive. It correctly stating that 50 - 10 = 40, suggesting that there's a lot more to ChatGPT than just a direct interface to a GPT3 text-generating model[^3]. The maths is OK but the reasoning is totally wrong, showing again that it has no real-world understanding of inflation. Inflation means "how much prices have risen in the last 12 months," so inflation rising from 10% to 50% means it has increased by 40 percentage points but it was never equal to 40%. Still, at least it's not telling me there's an error in my sentence any more.
 
 
 Prompt:
@@ -145,7 +145,7 @@ I think the underlying LLM, stripped away from the chatbot interface with its bl
 
 
 ----
-[^1]: Presumbly - it's not open source and there's very little information about how the model was trained, what training data was used, or what exactly is shown in the interface, all of which is very frustrating. 
+[^1]: Or so I assume -- it's not open source and there's very little information about how the model was trained, what training data was used, or what exactly is shown in the interface, all of which is very frustrating. 
 
 [^2]: LLM = **l**arge **l**anguage **m**odel, such as GPT3 or BERT: a statistical model of language, primarily capturing the probability with which different words follow each other in natural text. While we're at it, *GPT* stands for *generative pre-trained transformer* and *BERT* is *Bidirectional Encoder Representations from Transformers*.
 
