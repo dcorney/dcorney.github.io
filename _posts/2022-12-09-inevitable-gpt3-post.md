@@ -94,7 +94,7 @@ Response:
 
 My verdict:
 
-WTF?? I can't tell whether this is a LLM that's got relied on training data from countries where inflation is never very high or whether this is some other bit of logic in the chatbot that's trying to filter out garbage results or silly questions. It successfully processed exactly the same sentence but with smaller numbers, so it can't be the grammar that it's struggling with.
+WTF?? I can't tell whether this is a LLM that's relied on training data from countries where inflation is never very high or whether this is some other bit of logic in the chatbot that's trying to filter out garbage results or silly questions. It successfully processed exactly the same sentence but with smaller numbers, so it can't be the grammar that it's struggling with.
 
 Technically, inflation is measured using an index, such as CPI, and measuring by what ratio that index changes year to year (or month to month). This index is reset to 100 units (not %) periodically, and perhaps this is confusing the model? It sometimes confuses me. Examples of how inflation is discussed can be found in the [official ONS report](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2022) or in any newspaper.
 
