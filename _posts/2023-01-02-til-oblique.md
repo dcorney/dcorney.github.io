@@ -4,7 +4,7 @@ category: til
 title: TIL - Oblique Strategies
 ---
 
-(<b>I've decided to share more blog posts this year, with a focus on sharing what "today I learned". These will be shorter (less rambling!) then my other posts, but more frequent. Maybe.</b>)
+(<i>I've decided to share more blog posts this year, with a focus on sharing what "today I learned". These will be shorter (less rambling!) then my other posts, but more frequent. Maybe.</i>)
 
 I first heard about [Oblique Strategies](https://en.wikipedia.org/wiki/Oblique_Strategies) a few years ago - a set of prompts designed to break mental blockages and help creativity, co-authored by Brian Eno. One such prompt I just came across said:
 
