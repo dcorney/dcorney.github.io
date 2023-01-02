@@ -7,9 +7,9 @@ permalink: /contact/
 
 Please e-mail me at [dpacorney@gmail.com](mailto:dpacorney@gmail.com).
 
-Or via Twitter [@dcorney](https://twitter.com/dcorney)
-
 Or via <a rel="me" href="https://sigmoid.social/@dcorney">Mastodon</a>
+
+Or via Twitter [@dcorney](https://twitter.com/dcorney) though I rarely check the birdsite these days.
 
 I'm also on [LinkedIn](https://www.linkedin.com/in/david-corney-5225583) and [Google Scholar](https://scholar.google.co.uk/citations?user=rwRmcP4AAAAJ&hl=en)
 
