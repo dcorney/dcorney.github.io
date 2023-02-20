@@ -13,7 +13,7 @@ In [one paper](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal
 
 For example with the [simultaneous contrast illusion](https://en.wikipedia.org/wiki/Contrast_effect), the two inner grey blocks are physically identical, but the darker or lighter surrounding context makes them look lighter or darker, respectively. We trained some (very small) neural networks to estimate the brightness of grey blobs under different lighting conditions and despite achieving very high accuracy, they also showed consistent patterns of mistakes. We demonstrated that these were equivalent to the human perception of illusions.
 
-![simultaneous contrast illusion](https://en.wikipedia.org/wiki/File:Simultaneous_Contrast.svg)    
+![simultaneous contrast illusion](https://upload.wikimedia.org/wikipedia/commons/0/0a/Simultaneous_Contrast.svg)    
 
 When both humans and machine learning models see a mostly bright field of vision, it is consistent with a strong source of light. Under a bright light, the only way a surface can reflect only a modest amount of light is if it is a very dark, low-reflectance surface. So we perceive it as a dark shade of grey. Conversely, when we see a largely dark field of vision, it's consistent with low light levels, and the only way something can still reflect plenty of light is if it is a very light, highly reflective surface - so we see the <i>same</i> grey pixels as if the were much <i>lighter</i>.
 
