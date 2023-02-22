@@ -34,7 +34,7 @@ Suppose we play a (very boring) parlour game, where I read out one word at a tim
 
 But in the parlour game, if I then show my next word was actually "aeroplane", then sure, "mat" was the wrong guess, but no one can blame you for guessing it. It was a perfectly reasonable thing to guess. And optical illusions are not caused by inattention, inexperience or misbehaving neurons -- they're caused by the ambiguous nature of visual scenes and our attempts to disamiguate them. While we may be technically wrong in our perception, they are nonetheless perfectly rational.
 
-So I'd say that GPT-3 does an amazing job of constructing fluent text, based on its past experiences and a given prompt. That's what it has been designed to do and it does it well. If we then choose to believe that text is true, then more fool us.
+So I'd say that GPT-3 does an amazing job of constructing fluent text, based on its past experiences and a given prompt. That's what it has been designed to do and it does it well. If we then choose to believe that text is true, then more fool us. What's not clear to me is how whether there are any patterns to the "hallucinations", when ChatGPT produces clearly false output. Are these triggered by particular prompts, such as trick questions or misleading context? Or do they also happen when responding to more organic or innocent prompts?
 
 
 <br>
