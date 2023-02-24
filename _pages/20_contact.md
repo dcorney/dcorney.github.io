@@ -4,10 +4,11 @@ title: Contact
 permalink: /contact/
 ---
 
+I'd love to hear from you!
 
-Please e-mail me at [dpacorney@gmail.com](mailto:dpacorney@gmail.com).
+Please e-mail me at [dpacorney@gmail.com](mailto:dpacorney@gmail.com) .
 
-Or via <a rel="me" href="https://sigmoid.social/@dcorney">Mastodon</a>
+Or find me on <a rel="me" href="https://sigmoid.social/@dcorney">Mastodon</a>
 
 Or via Twitter [@dcorney](https://twitter.com/dcorney) though I rarely check the birdsite these days.
 
