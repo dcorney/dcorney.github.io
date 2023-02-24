@@ -1,12 +1,17 @@
-	<div class="left-bar">
-		<nav>
-	
-			<ul>
+<div class="left-bar">
+	<nav>
+
+		<ul>
+			<!-- old format: nav sidebar to all other pages 
 				{% for page in site.pages %} {% if page.title %}
 				<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-				{% endif %} {% endfor %}
-				<!-- <li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li> -->
-			</ul>
-			</ul>
-		</nav>
-	</div>
+				{% endif %} {% endfor %} -->
+			<!-- new format: nave sidebar just for blog pages -->
+			{% for page in site.posts %} {% if page.title %}
+			<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+			{% endif %} {% endfor %}
+			<!-- <li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li> -->
+		</ul>
+		</ul>
+	</nav>
+</div>
