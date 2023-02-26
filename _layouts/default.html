@@ -9,7 +9,13 @@
     <div>
         <main>
             <article>
-                {{ content }}
+                <!-- {{ content }} -->
+
+                {% for post in site.posts limit:1 %}
+                {{post.title}}
+                {{post}}
+                {{post.content}}
+                {% endfor %}
             </article>
             {% include footer.html %}
         </main>
