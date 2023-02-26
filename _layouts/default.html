@@ -11,7 +11,8 @@
             <article>
                 <!-- {{ content }} -->
                 {% assign post = site.posts.first %}
-                {{post}}
+                {{post.title}}
+                {{post.content}}
             </article>
             {% include footer.html %}
         </main>
