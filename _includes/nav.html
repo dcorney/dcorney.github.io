@@ -9,9 +9,9 @@
 			<!-- new format: nave sidebar just for blog pages -->
 			<h3>Recent posts</h3>
 			{% for page in site.posts %} {% if page.title %}
-			<li><a href="{{ page.url | prepend: site.baseurl }}"><small>{{ page.date | date: "%Y %B %-d"}}</small>
-					<p>{{
-						page.title }}</p>
+			<li><a href="{{ page.url | prepend: site.baseurl }}">
+					<small>{{ page.date | date: "%Y %B %-d"}}</small>
+					<p>{{page.title }}</p>
 				</a>
 			</li>
 			{% endif %} {% endfor %}
