@@ -20,7 +20,7 @@
 
  .top-nav {
      display: flex;
-     flex-direction: row;
+     flex-direction: column;
      align-items: center;
      justify-content: space-between;
      //  background-color: #00BAF0;
@@ -31,9 +31,6 @@
      padding: 1em;
  }
 
- .top-nav hr {
-     width: 100%;
- }
 
  .menu {
      display: flex;

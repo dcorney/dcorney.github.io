@@ -10,10 +10,8 @@
         <main>
             <article>
                 <!-- {{ content }} -->
-
-                {% for post in site.posts limit:1 %}
-                {{post.content}}
-                {% endfor %}
+                {% assign post = site.posts.first %}
+                {{post}}
             </article>
             {% include footer.html %}
         </main>
