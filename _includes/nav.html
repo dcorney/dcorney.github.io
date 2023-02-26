@@ -7,7 +7,7 @@
 				<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
 				{% endif %} {% endfor %} -->
 			<!-- new format: nave sidebar just for blog pages -->
-			<h2>Blog</h2>
+			<h3>Recent posts</h3>
 			{% for page in site.posts %} {% if page.title %}
 			<li><a href="{{ page.url | prepend: site.baseurl }}"><small>{{ page.date | date: "%Y %B %-d"}}</small>
 					<p>{{
