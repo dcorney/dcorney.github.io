@@ -8,7 +8,10 @@
 				{% endif %} {% endfor %} -->
 			<!-- new format: nave sidebar just for blog pages -->
 			{% for page in site.posts %} {% if page.title %}
-			<li><a href="{{ page.url | prepend: site.baseurl }}"><small>{{ page.date }}</small>{{ page.title }}</a>
+			<li><a href="{{ page.url | prepend: site.baseurl }}"><small>{{ page.date | date: "%Y %B %-d"}}</small>
+					<p>{{
+						page.title }}</p>
+				</a>
 			</li>
 			{% endif %} {% endfor %}
 			<!-- <li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li> -->

@@ -11,13 +11,30 @@
 <header>
 	<!-- <h1><a  href="/index.html">{{ site.title }}</a></h1> -->
 
-	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
 	<link rel="stylesheet" href="../css/main.css">
-	<!-- Top Navigation Menu -->
-	<div class="topnav">
-		<h1><a href="#home" class="active">{{ site.title }}</a></h1>
-	</div>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<section class="top-nav">
+		<div>
+			Logo Here
+		</div>
+		<input id="menu-toggle" type="checkbox" />
+		<label class='menu-button-container' for="menu-toggle">
+			<div class='menu-button'></div>
+		</label>
+		<ul class="menu">
+			<li>><a href="/contact">Contact</a></li>
+			<li>><a href="/CV">CV</a></li>
+			<li>><a href="/publications">Publications</a></li>
+			<li>><a href="/about">About</a></li>
+
+		</ul>
+	</section>
+
+
+
+
+
 	<!-- Navigation links (hidden by default) -->
 	<div id="myLinks">
 		<a href="/contact">Contact</a>
