@@ -31,11 +31,15 @@
      padding: 1em;
  }
 
+ .top-nav hr {
+     width: 100%;
+ }
+
  .menu {
      display: flex;
      flex-direction: row;
      list-style-type: none;
-     margin: 0;
+     margin: 10px 0;
      padding: 0;
      justify-content: space-between;
      color: $heading-font-color;
