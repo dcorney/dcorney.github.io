@@ -10,9 +10,10 @@
         <main>
             <article>
                 <!-- {{ content }} -->
-                {% assign post = site.posts.first %}
+                {{ site.posts.first }}
+                <!-- {% assign post = site.posts.first %}
                 {{post.title}}
-                {{post.content}}
+                {{post.content}} -->
             </article>
             {% include footer.html %}
         </main>
