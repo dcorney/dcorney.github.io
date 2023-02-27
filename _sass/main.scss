@@ -1,10 +1,10 @@
  /* Style the navigation menu */
  //  @import url(https://fonts.googleapis.com/css?family=Raleway);
 
- h2 {
-     vertical-align: center;
-     text-align: center;
- }
+ //  h2 {
+ //      vertical-align: center;
+ //      text-align: center;
+ //  }
 
  html,
  body {
@@ -36,7 +36,7 @@
      display: flex;
      flex-direction: row;
      list-style-type: none;
-     margin: 10px 0;
+     margin: 6px 6px;
      padding: 0;
      justify-content: space-between;
      color: $heading-font-color;
