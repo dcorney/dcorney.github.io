@@ -5,17 +5,11 @@
 
 <body>
     {% include header.html %}
-    <div class="left-bar" style="width:300px;">{% include nav.html %}</div>
+    <div class="left-bar" style="width:260px;">{% include nav.html %}</div>
     <div>
         <main>
-            <!-- <article> -->
             {{ content }}
-            <!-- {{ site.posts.first }} -->
-            <!-- {% assign post = site.posts.first %}
-                {{post.title}}
-                {{post.content}} -->
-            <!-- </article> -->
-            <p> ^^^ content // vvv footer</p>
+            <p> (Yes, the rendering is broken at the moment. Sorry!)</p>
             {% include footer.html %}
         </main>
     </div>
