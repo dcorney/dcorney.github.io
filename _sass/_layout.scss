@@ -106,19 +106,19 @@ time {
 @media screen and (max-width: 700px) {
 	.left-bar {
 		width: 120px;
-		margin-right: 2px;
+		// margin-right: 2px;
 	}
 
-	.left-bar ul {
-		margin: 2;
-	}
+	// .left-bar ul {
+	// 	margin: 2;
+	// }
 
-	.sidebar a {
-		float: left;
-	}
+	// .sidebar a {
+	// 	float: left;
+	// }
 
 	div.content {
-		margin-left: 0;
+		margin-left: 120px;
 	}
 }
 
