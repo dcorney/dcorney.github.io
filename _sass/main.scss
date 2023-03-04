@@ -25,7 +25,8 @@
  h1 {
      color: $heading-font-color;
      font-size: 2.5em;
-     margin: 0;
+     //  margin: 0;
+     line-height: 0px;
 
      a,
      a:visited {
@@ -70,7 +71,7 @@
      padding: 10px 15px;
      text-align: center;
      margin: 10px 0 0;
-     height: 60px;
+     //  height: 60px;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -132,30 +133,34 @@
      .left-bar {
          width: 120px;
          margin-right: 2px;
+
+         ul {
+             margin: 0;
+         }
+
+         a {
+             font-size: 0.5em;
+         }
      }
 
-     .left-bar ul {
-         margin: 0;
-     }
-
-     .p {
-         font-size: 0.5em;
-     }
-
-     // .sidebar a {
-     // 	float: left;
-     // }
-
-     div.content {
-         margin-left: 120px;
-     }
  }
 
+
+ // .sidebar a {
+ // 	float: left;
+ // }
+
+ div.content {
+     margin-left: 120px;
+ }
+
+
  .menu {
+     margin-top: -10px;
      display: flex;
      flex-direction: row;
      list-style-type: none;
-     margin: 6px 6px;
+     //  margin: 6px 6px;
      padding: 0;
      justify-content: space-between;
      color: $heading-font-color;
