@@ -95,7 +95,7 @@
      margin-right: 5px;
      width: 260px;
 
-     ul {
+     height: 100% ul {
          margin: 4;
          padding: 1;
          list-style: none;
@@ -127,6 +127,7 @@
 
  nav {
      float: left;
+     height: 100%
  }
 
  @media screen and (max-width: 700px) {
@@ -139,16 +140,11 @@
          }
 
          a {
-             font-size: 0.5em;
+             font-size: 0.8em;
          }
      }
 
  }
-
-
- // .sidebar a {
- // 	float: left;
- // }
 
  div.content {
      margin-left: 120px;
