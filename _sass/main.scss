@@ -7,7 +7,8 @@
  //  }
 
  html,
- body {
+ body,
+ .container {
      margin: 0;
      color: $font-color;
      font-family: $font-style;
@@ -15,6 +16,10 @@
      line-height: 1.6;
      -webkit-font-smoothing: antialiased;
      height: 100%;
+ }
+
+ .container {
+     overflow: hidden;
  }
 
  * {
@@ -125,7 +130,6 @@
      }
  }
 
-
  nav {
      float: left;
      height: 100%;
@@ -141,16 +145,14 @@
          }
 
          a {
-             font-size: 0.8em;
+             font-size: 0.7em;
          }
      }
 
+     div.content {
+         margin-left: 120px;
+     }
  }
-
- div.content {
-     margin-left: 120px;
- }
-
 
  .menu {
      margin-top: -10px;
