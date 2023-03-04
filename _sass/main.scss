@@ -18,9 +18,9 @@
      height: 100%;
  }
 
- .container {
-     overflow: hidden;
- }
+ //  .container {
+ //      overflow: hidden;
+ //  }
 
  * {
      font-family: "Raleway";
@@ -30,7 +30,6 @@
  h1 {
      color: $heading-font-color;
      font-size: 2.5em;
-     //  margin: 0;
      line-height: 0px;
 
      a,
@@ -63,11 +62,6 @@
      flex-direction: column;
      align-items: flex-start;
      justify-content: space-around;
-     //  background-color: #00BAF0;
-     //  background: linear-gradient(to left, #f46b45, #eea849);
-     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-     //  color: #FFF;
-     //  height: 40px;
      padding: 0px;
  }
 
@@ -76,7 +70,6 @@
      padding: 10px 15px;
      text-align: center;
      margin: 10px 0 0;
-     //  height: 60px;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -92,8 +85,6 @@
  time {
      color: #898989;
  }
-
-
 
  .left-bar {
      float: left;
@@ -137,7 +128,7 @@
 
  @media screen and (max-width: 700px) {
      .left-bar {
-         width: 120px;
+         width: 140px;
          margin-right: 2px;
 
          ul {
