@@ -48,7 +48,7 @@ header {
 	padding: 10px 15px;
 	text-align: center;
 	margin: 30px 0 0;
-	height: 20vh;
+	height: 12vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -72,6 +72,7 @@ time {
 .left-bar {
 	float: left;
 	margin-right: 5px;
+	width: 260px;
 
 	ul {
 		margin: 4;
@@ -99,6 +100,25 @@ time {
 			}
 
 		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.left-bar {
+		width: 120px;
+		margin-right: 2px;
+	}
+
+	.left-bar ul {
+		margin: 2;
+	}
+
+	.sidebar a {
+		float: left;
+	}
+
+	div.content {
+		margin-left: 0;
 	}
 }
 
