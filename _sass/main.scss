@@ -84,7 +84,7 @@
  }
 
  content {
-     margin-left: 2px;
+     margin-left: 5%;
 
  }
 
@@ -100,7 +100,7 @@
      height: 100%;
 
      ul {
-         margin: 4;
+         margin: 2%;
          padding: 1;
          list-style: none;
 
@@ -110,7 +110,7 @@
              a {
                  text-decoration: none;
                  display: block;
-                 padding: 10px;
+                 //  padding: 10px;
                  font-family: 'Muli', sans-serif;
                  line-height: 20px;
                  margin-bottom: -1px;
@@ -133,13 +133,30 @@
      height: 100%;
  }
 
- @media screen and (max-width: 750px) {
+ @media screen and (max-width: 950px) {
+
+     .left-bar {
+         float: left;
+         margin-right: 5px;
+         width: 10%;
+         height: 100%;
+
+         ul {
+             margin: 0;
+             padding: 1;
+             list-style: none;
+             font-size: 0.8em;
+         }
+     }
+ }
+
+ @media screen and (max-width: 800px) {
      .left-bar {
          display: none;
      }
 
      .content {
-         margin-left: 1px;
+         margin-left: 5%;
      }
  }
 
