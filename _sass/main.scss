@@ -76,6 +76,8 @@
  }
 
  main {
+     display: flex;
+     flex-direction: row;
      padding: 0 15px;
      max-width: $content-width;
      margin: 0 auto;
@@ -89,7 +91,7 @@
  .left-bar {
      float: left;
      margin-right: 5px;
-     width: 260px;
+     width: 15%;
      height: 100%;
 
      ul {
@@ -128,22 +130,7 @@
 
  @media screen and (max-width: 700px) {
      .left-bar {
-         width: 140px;
-         margin-right: 2px;
-         height: 100%;
-
-         ul {
-             margin: 0;
-         }
-
-         a {
-             font-size: 0.7em;
-         }
-     }
-
-     div.content {
-         margin-left: 120px;
-         height: 100%;
+         display: none;
      }
  }
 
