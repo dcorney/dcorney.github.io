@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Thoughts (blog)
+title: Some Thoughts
 permalink: /Blog/
 ---
 
-Some thoughts, as and when.
+Some thoughts, as and when I have them.
 
 <ul>
   {% for post in site.posts %}
