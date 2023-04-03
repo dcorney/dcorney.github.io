@@ -1,18 +1,18 @@
 ---
 layout: post
 category: thoughts
-title: Forget league tables! How high is your university?
+title: The ultimate academic league table - How high is your university above sea level?
 ---
 
-Prof. [Joanna Bryson](@j2bryson@mastodon.social) recently mentioned that Bath is [the highest university above sea level in the UK](https://mastodon.social/@j2bryson/110133731573164180). For some reason, this suprised me, but my quick searching for information about heights of universities only showed me endless league tables.
+Prof. [Joanna Bryson](@j2bryson@mastodon.social) recently mentioned that Bath is [the highest university above sea level in the UK](https://mastodon.social/@j2bryson/110133731573164180). For some reason this suprised me, but my quick search for confirmation only found me endless league tables.
 
-Thankfully, #OpenData to the rescue!
+Thankfully, #OpenData came to the rescue!
 
-JISC provides a portal covering [equipment owned by UK universities](https://data.ac.uk/) which handily provides a clean CSV files of the [address of every university in the UK](http://learning-provider.data.ac.uk/).
+First, JISC provides a portal covering [equipment owned by UK universities](https://data.ac.uk/) which handily provides a clean CSV file of the [address of every university in the UK](http://learning-provider.data.ac.uk/).
 
-And [Get The Data](https://www.getthedata.com/open-postcode-elevation) provides not only a nice searchable index linking locations to altitude, but also lets you download a corresponding CSV file.
+And second, [Get The Data](https://www.getthedata.com/open-postcode-elevation) provides not only a nice searchable index linking locations to altitude, but also lets you download a corresponding CSV file.
 
-Loading both into Pandas dataframes let me quickly generate a list of all[^1] UK universities sorted by height above sea level. And I then discovered that Pandas now let's you export direct to Markdown! So one copy/paste and here we are:
+Loading both into Pandas dataframes let me quickly generate a list of all[^1] UK universities sorted by height above sea level. And I then discovered that Pandas now let's you [export direct to Markdown](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_markdown.html)! So one copy/paste and here we are:
 
 +-----------------------------------------------------------+----------------------+----------------+
 | Learning Provider                                         | Town                 |   altitude (m) |
@@ -340,7 +340,7 @@ Loading both into Pandas dataframes let me quickly generate a list of all[^1] UK
 | RAVENSBOURNE                                              | LONDON               |              0 |
 +-----------------------------------------------------------+----------------------+----------------+
 | UNIVERSITY OF HULL                                        | HULL                 |              0 |
-+-----------------------------------------------------------+----------------------+----------------    +
++-----------------------------------------------------------+----------------------+----------------+
 
 
 
