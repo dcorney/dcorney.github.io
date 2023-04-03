@@ -17,8 +17,8 @@ Loading both into Pandas dataframes let me quickly generate a list of all[^1] UK
 
 | Learning Provider                                         | Town                 |   altitude (m) |
 |:----------------------------------------------------------|:---------------------|:--------------:|
-| UNIVERSITY OF KEELE                                       | NEWCASTLE            |            190 |
 | UNIVERSITY OF BATH (THE)                                  | BATH                 |            190 |
+| UNIVERSITY OF KEELE                                       | NEWCASTLE            |            190 |
 | NEWMAN UNIVERSITY                                         | BIRMINGHAM           |            190 |
 | LEEDS TRINITY UNIVERSITY                                  | LEEDS                |            170 |
 | UNIVERSITY OF WOLVERHAMPTON                               | WOLVERHAMPTON        |            160 |
