@@ -14,9 +14,9 @@ And second, [Get The Data](https://www.getthedata.com/open-postcode-elevation) p
 
 Loading both into Pandas dataframes let me quickly generate a list of all[^1] UK universities sorted by height above sea level. And I then discovered that Pandas now let's you [export direct to Markdown](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_markdown.html)! So one copy/paste and here we are:
 
-+-----------------------------------------------------------+----------------------+----------------+
+
 | Learning Provider                                         | Town                 |   altitude (m) |
-+===========================================================+======================+================+
++-----------------------------------------------------------+----------------------+----------------+
 | UNIVERSITY OF KEELE                                       | NEWCASTLE            |            190 |
 +-----------------------------------------------------------+----------------------+----------------+
 | UNIVERSITY OF BATH (THE)                                  | BATH                 |            190 |
