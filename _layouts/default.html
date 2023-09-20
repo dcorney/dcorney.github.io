@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/assets/css/styles.css">
 <html>
 {% include head.html %}
 
 <body>
     {% include header.html %}
-    <div class="main">
-        {% include nav.html %}
-        <div class="content">
-            {{ content }}
-        </div>
+    <div class="left-bar">{% include nav.html %}</div>
+    <div>
+        <main>
+            <article>
+                {{ content }}
+            </article>
+            {% include footer.html %}
+        </main>
     </div>
-    {% include footer.html %}
 </body>
 
 </html>
