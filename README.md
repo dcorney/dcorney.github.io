@@ -13,3 +13,13 @@ TODO: maybe try post.categories "contains" thought?
 [Based on the tutorial](http://taniarascia.com/make-a-static-website-with-jekyll)
 
 [Handy documentation here](https://shopify.dev/docs/themes/liquid/reference/basics/operators)
+
+## Updates
+Notes to future self: 
+
+1. Please use branches when making a bunch of related changes (e.g. formatting things).
+2. Please tag stable bits (e.g. just after posting a new post) so I can roll back if needed.
+3. Viewing the markup code in 'preview' mode may also reduce the number of commits.
+
+
+
