@@ -26,7 +26,7 @@ github_username:  dcorney
 sass:
   sass_dir: _sass
 include: ['_pages']
-markdown: GFM  
+markdown: kramdown
 # markdown was kramdown
 theme: minima
 kramdown:
