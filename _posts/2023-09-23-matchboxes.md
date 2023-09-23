@@ -20,22 +20,20 @@ One of the boxes is specially marked "\<start\>" and the slips of paper in this 
 
 Suppose the word drawn from the \<start\> box is "could". This defines the first word of the sentence. We then open the box labelled "could" to see what words can follow it, and pick one slip at random. Suppose we pick a slip labelled "not". That becomes the second word, and we need to open the "not" box to find what word can follow it. And so on. In the video below, the process continues until the slip labelled "anywhere." is drawn from the box labelled "them". The full-stop on the slip shows us it's the end of the sentence, giving us:
 
-<font size="large">Could not like them anywhere.</font>
+> Could not like them anywhere.
+
 
 It's not going to win a [Geisel Award](https://www.ala.org/alsc/awardsgrants/bookmedia/geisel), but it is a proper sentence.
 
-This is a preview
-
-```markdown
-[![Final video of fixing issues in your code in VS Code]
+[![This is a preview version]
 (https://img.youtube.com/vi/er3N7RB5-4Q/maxresdefault.jpg)]
 (https://www.youtube.com/watch?v=er3N7RB5-4Q)
-```
 
-this is an embedding
 
-{% include youtube.html id="er3N7RB5" %}
+this is an embedded version
 
+{% include youtube.html id="er3N7RB5-4Q" %}
+    
 
 <br>
 <br>
