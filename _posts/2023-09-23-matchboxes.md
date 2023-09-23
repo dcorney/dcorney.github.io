@@ -10,7 +10,7 @@ Over the last year or two, everyone has heard about "[large language models](htt
 
 
 First, here is a picture of MESLaM. 
-<img align="right", src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250"/>
+<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250" align="right"/>
 
 And here are some of the boxes opened to show their contents.
 
@@ -58,7 +58,7 @@ the boxes look like this:
 | and       | ham?     |
 {:.mbtablestyle}
 
-Note that there is no box labelled "ham" because we haven't seen a word follow "ham" so have no information about what to put in the box. If we continued training with the sentence "Well, do you?" then the *\<start\>* box would contain "do" and "well" and the *do* box would contain "you" twice, once with a question mark.
+Note that there is no box labelled "ham" because we haven't seen a word follow "ham" so have no information about what to put in the box. If we continued training with the sentence "Well, do you?" then the *\<start\>* box would contain "do" and "well" and the *do* box would contain "you" twice, once with a question mark. As shown in the photos above, every instance of the word "green" in our training data is followed by the word "eggs"; so the box **green** contains nothing but multiple copies of the word "eggs".
 
 ## Why did I do this?
 
