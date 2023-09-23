@@ -12,7 +12,7 @@ Here is a picture of MESLaM.
 
 And here are some of the boxes opened to show their contents.
 
-[ ] TODO photo some
+[ ] TODO photo some: "a" - lots of nouns; "green" only ever 'eggs'; + one other
 
 ## Generating text with MESLaM
 
@@ -20,20 +20,51 @@ One of the boxes is specially marked "\<start\>" and the slips of paper in this 
 
 Suppose the word drawn from the \<start\> box is "could". This defines the first word of the sentence. We then open the box labelled "could" to see what words can follow it, and pick one slip at random. Suppose we pick a slip labelled "not". That becomes the second word, and we need to open the "not" box to find what word can follow it. And so on. In the video below, the process continues until the slip labelled "anywhere." is drawn from the box labelled "them". The full-stop on the slip shows us it's the end of the sentence, giving us:
 
-> Could not like them anywhere.
+> <i>Could not like them anywhere.</i>
 
 
-It's not going to win a [Geisel Award](https://www.ala.org/alsc/awardsgrants/bookmedia/geisel), but it is a proper sentence.
+It's not going to win a [Geisel Award](https://www.ala.org/alsc/awardsgrants/bookmedia/geisel), but it is a proper sentence and it was written by MESLaM.
 
-[![This is a preview version]
+[![Final video of fixing issues in your code in VS Code]
 (https://img.youtube.com/vi/er3N7RB5-4Q/maxresdefault.jpg)]
 (https://www.youtube.com/watch?v=er3N7RB5-4Q)
 
-
-this is an embedded version
+or:
 
 {% include youtube.html id="er3N7RB5-4Q" %}
-    
+
+## Training the model
+
+In a later post, I'll explain the training process in plenty of detail, but the outline is simple enough. Each box should end up with all the words that can follow the word written on the box. The more copies of a word that are in the box, the more likely that word is to come next.
+
+To do this, you'll need some training text, divided into sentences with each one on a strip of paper. You'll also need a pile of blank, empty matchboxes. Write "\<start\>" on one of these.
+
+Then for each sentence:
+
+1. Put the first word into the special "<start>" box. 
+2. Find a box with this word on the label. If there isn't one then write it on a new, empty matchbox.
+3. Put the next word into this box.
+4. If the word ends the sentence, stop. Otherwise go back to step 2.
+
+So after training with the sentence:
+
+> "Do you like green eggs and ham?"
+
+the boxes should look like this:
+
+| Box label | Contents |
+| :-------- | :------- |
+| "<start>" | do       |
+| do        | you      |
+| you       | like     |
+| like      | green    |
+| green     | eggs     |
+| eggs      | and      |
+| and       | ham?     |
+
+Note that there is no box labelled "ham" because we've never seen a word follow "ham" so have no information about what would go in the box.
+
+
 
 <br>
 <br>
