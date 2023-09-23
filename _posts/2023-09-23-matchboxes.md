@@ -6,13 +6,12 @@ title: A <i>small</i> language model made from match boxes
 
 [draft post]
 
-Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it **MESLaM**, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel[^1]. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. The distribution of words in boxes was determined by the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
+Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it **MESLaM**, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel[^1]. MESLaM is a set of matchboxes, each with a word on top and each filled with little bits of printed paper. The set of words in each box was chosen to reflect the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
+
+First, here is a picture of MESLaM. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. Below are some of the boxes opened to show their contents.
+<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250"/>
 
 
-First, here is a picture of MESLaM. 
-<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250" align="right"/>
-
-And here are some of the boxes opened to show their contents.
 
 | Box                                                                                                                                                                         | Contents                                                                                                                                         |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,4 +76,4 @@ The text that MESLaM produces is rather less impressive than ChatGPT. How could 
 <br>
 <br>
 
-[^1]: The name is a large nod to Donald Michie's MENACE, short for [Matchbox Educable Noughts and Crosses Engine](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). His [main paper on it] (https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) is from The Computer Journal, 1963. Yes, it's 60 years old! He demonstrated that a set of matchboxes with coloured beads could *learn* how to play a decent game of noughts and crosses (tic-tac-toe).
+[^1]: The name is a large nod to Donald Michie's MENACE, short for [Matchbox Educable Noughts and Crosses Engine](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). His [main paper on it](https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) is from The Computer Journal, 1963. Yes, it's 60 years old! He demonstrated that a set of matchboxes with coloured beads could *learn* how to play a decent game of noughts and crosses (tic-tac-toe).
