@@ -14,12 +14,12 @@ First, here is a picture of MESLaM.
 
 And here are some of the boxes opened to show their contents.
 
-| Box label                                                                                                                                                                   | Contents                                                                                               |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
-| <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word "green" written on top, open to show the word eggs on multiple slips of paper" width="150"/> | *green* contains just the word 'eggs' over and over again                                              |
-| <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word "start" written on top, open to show many words on slips of paper" width="150"/>             | *\<start\>* contains lots of different words: lots of woulds and coulds but also "I", "And" and "Not". |
-| <img src="/images/matchboxes/contents_and.JPG" alt="a matchbox with the word "and" written on top, open to show the word many words on slips of paper" width="150"/>        | *and* contains lots of "ham" but also "I", "on", "you" and others.                                     |
-| <img src="/images/matchboxes/contents_a.JPG" alt="a matchbox with the word "a" written on top, open to show the word many words on slips of paper" width="150"/>            | *a* is followed by lots of nouns, including "mouse", "train", and "fox". Some appear multiple times.   |
+| Box                                                                                                                                                                         | Contents                                                                                                                                         |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word 'green' written on top, open to show the word eggs on multiple slips of paper" width="150"/> | The box *green* contains just the word 'eggs' over and over again because in our text, the word "green" is always followed by "eggs".            |
+| <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word 'start' written on top, open to show many words on slips of paper" width="150"/>             | *\<start\>* contains lots of different words, as the training sentences often start with would or could but sometimes also "I", "And" and "Not". |
+| <img src="/images/matchboxes/contents_and.JPG" alt="a matchbox with the word 'and' written on top, open to show the word many words on slips of paper" width="150"/>        | *and* contains lots of "ham" but also "I", "on", "you" and others.                                                                               |
+| <img src="/images/matchboxes/contents_a.JPG" alt="a matchbox with the word 'a' written on top, open to show the word many words on slips of paper" width="150"/>            | The word "a" is followed by lots of different nouns, including "mouse", "train", and "fox". Some appear multiple times.                          |
 
 
 
