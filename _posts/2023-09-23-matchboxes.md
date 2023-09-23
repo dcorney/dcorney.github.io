@@ -14,6 +14,7 @@ First, here is a picture of MESLaM.
 
 And here are some of the boxes opened to show their contents.
 
+| Box label  | Contents | 
 :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
 | <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word 'green' written on top, open to show the word eggs on multiple slips of paper" width="150"/> | *green* contains just the word 'eggs' over and over again                                              |
 | <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word 'start' written on top, open to show many words on slips of paper" width="150"/>             | *\<start\>* contains lots of different words: lots of woulds and coulds but also "I", "And" and "Not". |
