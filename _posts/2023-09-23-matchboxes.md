@@ -1,11 +1,12 @@
 ---
 layout: post
 category: thoughts
-title: matchbox thing
+title: A small language model made from match boxes
 ---
 
-Over the last year or two, everyone has come across the phrase "large language models" and may have gasped at the thought that having 100 billion parameters is now seen as pretty standard. Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it MESLaM, or Matchbox Educable Small Language Model. MESLaM consists of 35 white match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. The distribution of words in boxes was determined by the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. This model is not sentient. Let's look at the model and what it can do.
+Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it MESLaM, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. The distribution of words in boxes was determined by the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
 
+% You may have even gasped at the thought that having 100 billion parameters is now seen as pretty standard.
 
 Here is a picture of MESLaM.
 <img src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250"/>
@@ -25,13 +26,15 @@ Suppose the word drawn from the \<start\> box is "could". This defines the first
 
 It's not going to win a [Geisel Award](https://www.ala.org/alsc/awardsgrants/bookmedia/geisel), but it is a proper sentence and it was written by MESLaM.
 
-[![Final video of fixing issues in your code in VS Code]
-(https://img.youtube.com/vi/er3N7RB5-4Q/maxresdefault.jpg)]
-(https://www.youtube.com/watch?v=er3N7RB5-4Q)
+[![Final video](https://img.youtube.com/vi/er3N7RB5-4Q/0.jpg)](https://www.youtube.com/watch?v=er3N7RB5-4Q)
 
 or:
 
 {% include youtube.html id="er3N7RB5-4Q" %}
+
+direct embedding version
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/er3N7RB5-4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Training the model
 
@@ -41,7 +44,7 @@ To do this, you'll need some training text, divided into sentences with each one
 
 Then for each sentence:
 
-1. Put the first word into the special "<start>" box. 
+1. Put the first word into the special "\<start\>" box. 
 2. Find a box with this word on the label. If there isn't one then write it on a new, empty matchbox.
 3. Put the next word into this box.
 4. If the word ends the sentence, stop. Otherwise go back to step 2.
@@ -54,7 +57,7 @@ the boxes should look like this:
 
 | Box label | Contents |
 | :-------- | :------- |
-| "<start>" | do       |
+| \<start\> | do       |
 | do        | you      |
 | you       | like     |
 | like      | green    |
@@ -64,6 +67,19 @@ the boxes should look like this:
 
 Note that there is no box labelled "ham" because we've never seen a word follow "ham" so have no information about what would go in the box.
 
+## Why did I do this?
+
+My original motivation was concern that some people were so overwhelmed by ChatGPT that they genuinely believed it was sentient. Plenty of others have claimed it is at least a signficant step towards artificial general intelligence - you know, proper AI. I wanted to demonstrate that generating text, even fluent text, does **not** require any sort of intelligence. At all. 
+
+## Extensions
+
+I know that the text MESLaM produces is rather less impressive than ChatGPT. How could it be made better? 
+
+* n-grams
+
+## Background reading
+
+Donald Michie's [Menace](https://people.csail.mit.edu/brooks/idocs/matchbox.pdf)
 
 
 <br>
