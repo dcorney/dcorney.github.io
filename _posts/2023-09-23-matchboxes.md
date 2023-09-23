@@ -1,20 +1,27 @@
 ---
 layout: post
 category: thoughts
-title: A *small* language model made from match boxes
+title: A <i>small</i> language model made from match boxes
 ---
 
 [draft post]
 
-Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it MESLaM, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. The distribution of words in boxes was determined by the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
+Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it **MESLaM**, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel[^1]. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. The distribution of words in boxes was determined by the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
 
 
-Here is a picture of MESLaM.
-<img src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250"/>
+First, here is a picture of MESLaM. 
+<img align="right", src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250"/>
 
 And here are some of the boxes opened to show their contents.
 
-[ ] TODO photo some: "a" - lots of nouns; "green" only ever 'eggs'; + one other
+| Box label                                                                                                                                                                   | Contents                                                                                               |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
+| <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word "green" written on top, open to show the word eggs on multiple slips of paper" width="150"/> | *green* contains just the word 'eggs' over and over again                                              |
+| <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word "start" written on top, open to show many words on slips of paper" width="150"/>             | *\<start\>* contains lots of different words: lots of woulds and coulds but also "I", "And" and "Not". |
+| <img src="/images/matchboxes/contents_and.JPG" alt="a matchbox with the word "and" written on top, open to show the word many words on slips of paper" width="150"/>        | *and* contains lots of "ham" but also "I", "on", "you" and others.                                     |
+| <img src="/images/matchboxes/contents_a.JPG" alt="a matchbox with the word "a" written on top, open to show the word many words on slips of paper" width="150"/>            | *a* is followed by lots of nouns, including "mouse", "train", and "fox". Some appear multiple times.   |
+
+
 
 ## Generating text with MESLaM
 
@@ -24,7 +31,6 @@ Suppose the word drawn from the *\<start\>* box is "could". This defines the fir
 
 > <i>Could not like them anywhere.</i>
 
-
 It's not going to win a [Geisel Award](https://www.ala.org/alsc/awardsgrants/bookmedia/geisel), but it is a proper sentence and it was written by MESLaM.
 
 And here's a video of MESLaM producing exactly that sentence:
@@ -33,9 +39,9 @@ And here's a video of MESLaM producing exactly that sentence:
 
 ## Training the model
 
-In a later post, I'll explain the training process in plenty of detail, but the outline is simple enough. The goal is to end up with each box containing all the words that can follow the word written on top of the box. The more copies of a word that are in the box, the more likely that word is to come next.
+In a later post, I'll explain the training process in plenty of detail, but the outline is simple enough. The goal is fill each box with the words that can follow the word written on top of the box. The more copies of a word that are in the box, the more likely that word is to be drawn as the next word.
 
-To train MESLaM, I split the text into sentences. The first word of each sentence went into the *\<start\>* box.  I also wrote that word on a new box, if there wasn't already a box with that label. Then into each box I put the word that comes next. So after training with the sentence:
+To train MESLaM, I split the text into sentences. The first word of each sentence went into the *\<start\>* box.  I also wrote that word on a new box, if there wasn't already a box with that label. Then into each box I put the word that comes next, working my way through each sentence in turn. So after training with the sentence:
 
 > "Do you like green eggs and ham?"
 
@@ -50,14 +56,15 @@ the boxes look like this:
 | green     | eggs     |
 | eggs      | and      |
 | and       | ham?     |
+{:.mbtablestyle}
 
-Note that there is no box labelled "ham" because we've never seen a word follow "ham" so have no information about what would go in the box. If we continued training with the sentence "Well, do you?" then the *\<start\>* box would contain "do" and "well" and the *do* box would contain "you" twice.
+Note that there is no box labelled "ham" because we haven't seen a word follow "ham" so have no information about what to put in the box. If we continued training with the sentence "Well, do you?" then the *\<start\>* box would contain "do" and "well" and the *do* box would contain "you" twice, once with a question mark.
 
 ## Why did I do this?
 
 My original motivation was concern that some people were so overwhelmed by ChatGPT that they genuinely believed it was sentient. Plenty of others have claimed it is at least a signficant step towards artificial general intelligence - you know, proper AI. I wanted to demonstrate that generating text, even fluent text, does **not** require any sort of intelligence. At all. 
 
-Also, I am a nerd. Hello.
+Also, I am a nerd. Hello!
 
 ## Extensions
 
@@ -66,14 +73,8 @@ The text that MESLaM produces is rather less impressive than ChatGPT. How could 
 * n-grams
 * more training data
 
-## Background reading
-
-Donald Michie's [Menace](https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) from The Computer Journal, 1963. Yes, it's 60 years old!
-
 
 <br>
 <br>
 
-[^1]: fn1
-
-[^2]: fn2
+[^1]: The name is a large nod to Donald Michie's MENACE, short for [Matchbox Educable Noughts and Crosses Engine](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). His [main paper on it] (https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) is from The Computer Journal, 1963. Yes, it's 60 years old! He demonstrated that a set of matchboxes with coloured beads could *learn* how to play a decent game of noughts and crosses (tic-tac-toe).
