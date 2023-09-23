@@ -9,9 +9,9 @@ title: A <i>small</i> language model made from match boxes
 Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it **MESLaM**, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel[^1]. MESLaM is a set of matchboxes, each with a word on top and each filled with little bits of printed paper. The set of words in each box was chosen to reflect the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
 
 First, here is a picture of MESLaM. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. Below are some of the boxes opened to show their contents.
-<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250"/>
+<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250" align="right"/>
 
-
+<br>
 
 | Box                                                                                                                                                                         | Contents                                                                                                                                         |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
