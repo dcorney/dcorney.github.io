@@ -109,12 +109,17 @@ time {
 	td,
 	th {
 		border: 1px solid black;
+		padding: 12px;
 	}
+
+	clear: both;
 }
 
 .narrow_table {
 	border-collapse: collapse;
-	max-width: 50%;
+	max-width: 66%;
+	padding: 12px;
+	clear: both;
 
 }
 

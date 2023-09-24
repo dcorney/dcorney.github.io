@@ -49,42 +49,44 @@ And here's a much longer sentence it made, ["And I do so like them here they are
 
 In a later post, I'll explain the training process in plenty of detail, but the outline is simple enough. The goal is fill each box with the words that can immediately follow the word written on top of the box. The more copies of a word that are in a box, the more likely that word is to be selected as the next word.
 
-To train MESLaM, I split the text of [Green Eggs and Ham](https://en.wikipedia.org/wiki/Green_Eggs_and_Ham)[^2] into sentences. The first word of each sentence went into the *\<start\>* box.  I also wrote that word on a new box, if there wasn't already a box with that label. Then into each box I put the word that comes next, working my way through each sentence in turn. So after training with the sentence:
+To train MESLaM, I split the text of [Green Eggs and Ham](https://en.wikipedia.org/wiki/Green_Eggs_and_Ham)[^2] into sentences. Taking each sentence in turn, the first word went into the *\<start\>* box. I also wrote this word on a new box, if there wasn't already a box with that label. Then I took the next word in the sentence and put it into this box. So each box contains the words that come immediately after it, and each word goes into the box labelled with the word that comes before it. Simple? Perhaps an example would help. After training with the sentence:
 
-> "Do you like green eggs and ham?"
+> "Would you, could you in the dark?"
 
 the boxes look like this:
 
-| Box label | Contents |
-| :-------: | :------: |
-| \<start\> |    do    |
-|    do     |   you    |
-|    you    |   like   |
-|   like    |  green   |
-|   green   |   eggs   |
-|   eggs    |   and    |
-|    and    |   ham?   |
+| Box label | Contents  |
+| :-------: | :-------: |
+| \<start\> |   would   |
+|   would   |    you    |
+|    you    | could, in |
+|   could   |    you    |
+|    in     |    the    |
+|    the    |   dark?   |
 {:.border_table}
 
-Note that there is no box labelled "ham" because we haven't seen a word follow "ham" so have no information about what to put in the box. If we continued training with the sentence "Well, do you?" then the *\<start\>* box would contain "do" and "well" and the *do* box would contain "you" twice, once with a question mark. As shown in the photos above, every instance of the word "green" in our training data is followed by the word "eggs"; so the box **green** contains nothing but multiple copies of the word "eggs".
+Note that there is no box labelled "dark" because we haven't seen any word follow "dark". The box *you* contains two slips of paper, for "could" and "in" as both words follow immediately afer "you" in this sentence. As shown in the photos above, every instance of the word "green" in our training data is followed by the word "eggs"; so the box **green** contains nothing but lots of copies of the word "eggs".
 
 ## Why did I do this?
 
-My original motivation was concern that some people were so overwhelmed by ChatGPT that they genuinely believed it was sentient. Plenty of others have claimed it is at least a signficant step towards artificial general intelligence - you know, proper AI. I wanted to demonstrate that generating text, even fluent text, does **not** require any sort of intelligence. At all. 
+My original motivation was my concern that some people were so overwhelmed by LLM chatbots that they genuinely [believe they're sentient](https://www.theregister.com/2022/06/13/google_lamda_sentient_claims/). Plenty of others have claimed it is at least a signficant step towards artificial general intelligence - you know, *proper* AI. I wanted to demonstrate that generating text, even fluent text, does **not** require any sort of intelligence. At all. So wanted as transparent a model as possible, with nowhere for sentience to hide. Let me know if I succeeded.
 
 Also, I am a nerd. Hello!
 
 ## Extensions
 
-The text that MESLaM produces is rather less impressive than ChatGPT. How could it be made better? 
+The text that MESLaM produces is rather less impressive than ChatGPT and its competitors. How could it be made better? 
 
-* n-grams
-* more training data
+First, MESLaM only uses a single word of context. As it generates new sentences, it only considers the current word to pick the next word. Modern LLMs have a context of hundreds or even thousands of words, which leads to greater coherence and relevance of responses.
+
+Second, MESLaM was trained on a single, short book of less than 800 words. LLMs are typically trained on billions of words from many thousands of books and websites, so can of course produce a much wider range of outputs.
+
+And third, ChatGPT and other chatbots are not just language models: they are wrapped inside complex and proprietary tools perform substantial (though largely secret) pre- and post-processing. For example, ChatGPT is designed to not produce racist or violent output. I assume that the inner model produces all sorts of offensive text but the wrapper recognises and removes it, and triggers the LLM to try again.
 
 
 <br>
 <br>
 
-[^1]: The name is a large nod to Donald Michie's MENACE, short for [Matchbox Educable Noughts and Crosses Engine](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). His [main paper on it](https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) is from The Computer Journal, 1963. Yes, it's 60 years old! He demonstrated that a set of matchboxes with coloured beads could *learn* how to play a decent game of noughts and crosses (tic-tac-toe).
+[^1]: The name is a large nod to Donald Michie's MENACE, short for [Matchbox Educable Noughts and Crosses Engine](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). He demonstrated that a set of matchboxes with coloured beads could *learn* how to play a decent game of noughts and crosses (tic-tac-toe). His [main paper on it](https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) is from The Computer Journal, 1963 -- yes, it's 60 years old! -- though the work predates the paper by a couple of years. Which means that Green Eggs and Ham was published only a year before MENACE was built.
 
-[^2]: The main reason for choosing "Green Eggs and Ham" is that it only has 50 words. Each matchbox defines the words that can follow it, and quite a few words only appear at the end of a sentence, so we end up with 34 boxes, including the extra \<start\> box.
+[^2]: The main reason for choosing "Green Eggs and Ham" is that it only has 50 different words. Each matchbox defines the words that can follow it, and quite a few words only appear at the end of a sentence, so we end up with 34 boxes, including the extra \<start\> box.
