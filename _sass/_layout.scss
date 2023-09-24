@@ -102,7 +102,7 @@ time {
 	}
 }
 
-.mbtablestyle {
+.border_table {
 	border-collapse: collapse;
 
 	>table,
@@ -110,6 +110,12 @@ time {
 	th {
 		border: 1px solid black;
 	}
+}
+
+.narrow_table {
+	border-collapse: collapse;
+	max-width: 50%;
+
 }
 
 /* Aside */

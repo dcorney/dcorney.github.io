@@ -1,25 +1,27 @@
 ---
 layout: post
 category: thoughts
-title: A <i>small</i> language model made from match boxes
+title: A <i>small</i> language model made from matchboxes
 ---
 
 [draft post]
 
 Over the last year or two, everyone has heard about "[large language models](https://en.wikipedia.org/wiki/Large_language_model)" and their use in tools like ChatGPT.  Well, I'm here to talk about small language models (SLMs) and one in particular that I've just built. I call it **MESLaM**, or **M**atchbox **E**ducable **S**mall **La**nguage **M**odel[^1]. MESLaM is a set of matchboxes, each with a word on top and each filled with little bits of printed paper. The set of words in each box was chosen to reflect the text of "Green Eggs and Ham" by Dr Seuss. And that's it: no computer, no wires, no AI. Let's look at the model and what it can do.
 
-First, here is a picture of MESLaM. MESLaM consists of 35 plain match boxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. Below are some of the boxes opened to show their contents.
-<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white match boxes each with a word written on the top" width="250" align="right"/>
+<img  src="/images/matchboxes/35_match_boxes.jpeg" alt="35 white matchboxes each with a word written on the top" width="250" align="right"/>
 
-<br>
+First, here is a picture of MESLaM. MESLaM consists of 35 plain matchboxes, each with a single word written on the top. Each box contains a few slips of paper and each slip has a single word written on it. 
 
-| Box                                                                                                                                                                         | Contents                                                                                                                                         |
+Below are some of the boxes opened to show their contents.
+
+
+|                                                                                                                                                                             |                                                                                                                                                  |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word 'green' written on top, open to show the word eggs on multiple slips of paper" width="300"/> | The box *green* contains just the word 'eggs' over and over again because in our text, the word "green" is always followed by "eggs".            |
 | <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word 'start' written on top, open to show many words on slips of paper" width="300"/>             | *\<start\>* contains lots of different words, as the training sentences often start with would or could but sometimes also "I", "And" and "Not". |
 | <img src="/images/matchboxes/contents_and.JPG" alt="a matchbox with the word 'and' written on top, open to show the word many words on slips of paper" width="300"/>        | *and* contains lots of "ham" but also "I", "on", "you" and others.                                                                               |
 | <img src="/images/matchboxes/contents_a.JPG" alt="a matchbox with the word 'a' written on top, open to show the word many words on slips of paper" width="300"/>            | The word "a" is followed by lots of different nouns, including "mouse", "train", and "fox". Some appear multiple times.                          |
-
+{:.narrow_table}
 
 
 ## Generating text with MESLaM
@@ -47,15 +49,15 @@ To train MESLaM, I split the text into sentences. The first word of each sentenc
 the boxes look like this:
 
 | Box label | Contents |
-| :-------- | :------- |
-| \<start\> | do       |
-| do        | you      |
-| you       | like     |
-| like      | green    |
-| green     | eggs     |
-| eggs      | and      |
-| and       | ham?     |
-{:.mbtablestyle}
+| :-------: | :------: |
+| \<start\> |    do    |
+|    do     |   you    |
+|    you    |   like   |
+|   like    |  green   |
+|   green   |   eggs   |
+|   eggs    |   and    |
+|    and    |   ham?   |
+{:.border_table}
 
 Note that there is no box labelled "ham" because we haven't seen a word follow "ham" so have no information about what to put in the box. If we continued training with the sentence "Well, do you?" then the *\<start\>* box would contain "do" and "well" and the *do* box would contain "you" twice, once with a question mark. As shown in the photos above, every instance of the word "green" in our training data is followed by the word "eggs"; so the box **green** contains nothing but multiple copies of the word "eggs".
 
