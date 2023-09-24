@@ -15,12 +15,12 @@ First, here is a picture of MESLaM. MESLaM consists of 35 plain matchboxes, each
 Below are some of the boxes opened to show their contents.
 
 
-|                                                                                                                                                                             |                                                                                                                                                  |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word 'green' written on top, open to show the word eggs on multiple slips of paper" width="300"/> | The box *green* contains just the word 'eggs' over and over again because in our text, the word "green" is always followed by "eggs".            |
-| <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word 'start' written on top, open to show many words on slips of paper" width="300"/>             | *\<start\>* contains lots of different words, as the training sentences often start with would or could but sometimes also "I", "And" and "Not". |
-| <img src="/images/matchboxes/contents_and.JPG" alt="a matchbox with the word 'and' written on top, open to show the word many words on slips of paper" width="300"/>        | *and* contains lots of "ham" but also "I", "on", "you" and others.                                                                               |
-| <img src="/images/matchboxes/contents_a.JPG" alt="a matchbox with the word 'a' written on top, open to show the word many words on slips of paper" width="300"/>            | The word "a" is followed by lots of different nouns, including "mouse", "train", and "fox". Some appear multiple times.                          |
+|                                                                                                                                                                             |                                                                                                                                                        |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="/images/matchboxes/contents_green.JPG" alt="a matchbox with the word 'green' written on top, open to show the word eggs on multiple slips of paper" width="300"/> | The box *green* contains just the word 'eggs' over and over again because in our text, the word "green" is always followed by "eggs".                  |
+| <img src="/images/matchboxes/contents_start.JPG" alt="a matchbox with the word 'start' written on top, open to show many words on slips of paper" width="300"/>             | *\<start\>* contains lots of different words, as the training sentences often start with "would" or "could" but some started with "I", "And" or "Not". |
+| <img src="/images/matchboxes/contents_and.JPG" alt="a matchbox with the word 'and' written on top, open to show the word many words on slips of paper" width="300"/>        | The *and* box contains lots of "ham" but also "I", "on", "you" and others.                                                                             |
+| <img src="/images/matchboxes/contents_a.JPG" alt="a matchbox with the word 'a' written on top, open to show the word many words on slips of paper" width="300"/>            | The word "a" is followed by lots of different nouns, including "mouse", "train", and "fox". Some appear multiple times.                                |
 {:.narrow_table}
 
 
@@ -28,21 +28,28 @@ Below are some of the boxes opened to show their contents.
 
 One of the boxes is specially marked "*\<start\>*" and the slips of paper in this box show every word that can start a sentence, based on the training text. To generate a new sentence, we simply take a random slip of paper from this box and note the word. This is the first word of the new sentence. To generate each successive word, we open the box labelled with the current word and pick one slip at random. This continues until the new word also has a terminating punctuation mark (i.e. a full-stop, exclamation mark or question mark). 
 
-Suppose the word drawn from the *\<start\>* box is "could". This defines the first word of the sentence. We then open the box labelled "*could*" to see what words can follow it, and pick one slip at random. Suppose we pick a slip labelled "not". That becomes the second word, and we need to open the "*not*" box to find what word can follow it. And so on. In the video below, the process continues until the slip labelled "anywhere." is drawn from the box labelled "*them*". The full-stop on the slip shows us it's the end of the sentence, giving us:
+Suppose the word drawn from the *\<start\>* box is "I". This defines the first word of the sentence. We then open the box labelled "*I*" to see what words can follow it, and pick one slip at random. Suppose we pick a slip labelled "do". That becomes the second word, and we need to open the "*do*" box to find what word can follow it. And so on. In the video below, the process continues until the slip labelled "tree." is drawn from the box labelled "*a*". The full-stop on the slip shows us it's the end of the sentence, giving us:
 
-> <i>Could not like them anywhere.</i>
+> <i>I do not like them in a tree.</i>
 
 It's not going to win a [Geisel Award](https://www.ala.org/alsc/awardsgrants/bookmedia/geisel), but it is a proper sentence and it was written by MESLaM.
 
 And here's a video of MESLaM producing exactly that sentence:
 
-{% include youtube.html id="er3N7RB5-4Q" %}
+{% include youtube.html id="KKVvI-7yiSA" %}
+
+
+Here's another video of MESLaM generating the sentence ["Could not like them anywhere."](https://youtu.be/er3N7RB5-4Q).
+
+And here's a much longer sentence it made, ["And I do so like them here they are so good, you may like them with a tree!"](https://youtu.be/tSH2fgwyB08).
+
+
 
 ## Training the model
 
-In a later post, I'll explain the training process in plenty of detail, but the outline is simple enough. The goal is fill each box with the words that can follow the word written on top of the box. The more copies of a word that are in the box, the more likely that word is to be drawn as the next word.
+In a later post, I'll explain the training process in plenty of detail, but the outline is simple enough. The goal is fill each box with the words that can immediately follow the word written on top of the box. The more copies of a word that are in a box, the more likely that word is to be selected as the next word.
 
-To train MESLaM, I split the text into sentences. The first word of each sentence went into the *\<start\>* box.  I also wrote that word on a new box, if there wasn't already a box with that label. Then into each box I put the word that comes next, working my way through each sentence in turn. So after training with the sentence:
+To train MESLaM, I split the text of [Green Eggs and Ham](https://en.wikipedia.org/wiki/Green_Eggs_and_Ham)[^2] into sentences. The first word of each sentence went into the *\<start\>* box.  I also wrote that word on a new box, if there wasn't already a box with that label. Then into each box I put the word that comes next, working my way through each sentence in turn. So after training with the sentence:
 
 > "Do you like green eggs and ham?"
 
@@ -79,3 +86,5 @@ The text that MESLaM produces is rather less impressive than ChatGPT. How could 
 <br>
 
 [^1]: The name is a large nod to Donald Michie's MENACE, short for [Matchbox Educable Noughts and Crosses Engine](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). His [main paper on it](https://people.csail.mit.edu/brooks/idocs/matchbox.pdf) is from The Computer Journal, 1963. Yes, it's 60 years old! He demonstrated that a set of matchboxes with coloured beads could *learn* how to play a decent game of noughts and crosses (tic-tac-toe).
+
+[^2]: The main reason for choosing "Green Eggs and Ham" is that it only has 50 words. Each matchbox defines the words that can follow it, and quite a few words only appear at the end of a sentence, so we end up with 34 boxes, including the extra \<start\> box.
