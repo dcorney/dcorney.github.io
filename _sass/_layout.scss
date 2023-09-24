@@ -118,9 +118,14 @@ time {
 .narrow_table {
 	border-collapse: collapse;
 	max-width: 66%;
-	padding: 12px;
-	clear: both;
 
+	>table,
+	td,
+	th {
+		padding: 12px;
+	}
+
+	clear: both;
 }
 
 /* Aside */
