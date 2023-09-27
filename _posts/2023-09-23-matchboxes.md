@@ -48,7 +48,7 @@ Perhaps not the most gripping prose style, but it's definitely producing a varie
 
 ## Training the model 
 
-In a later post, I'll explain the training process in plenty of detail (and an epic video!), but the outline is simple enough. The goal is fill each box with the words that can immediately follow the word written on top of the box. The more copies of a word that are in a box, the more likely that word is to be selected as the next word.
+In a [later post](https://dcorney.com/thoughts/2023/09/26/training-matchboxes.html), I'll explain the training process in plenty of detail (and an epic video!), but the outline is simple enough. The goal is fill each box with the words that can immediately follow the word written on top of the box. The more copies of a word that are in a box, the more likely that word is to be selected as the next word.
 
 To train MESLaM, I split the text of Green Eggs and Ham into sentences. Taking each sentence in turn, the first word went into the *\<start\>* box. I also wrote this word on a new box, if there wasn't already a box with that label. Then I took the next word in the sentence and put it into this box. So each box contains the words that come immediately after it, and each word goes into the box labelled with the word that comes before it. Simple? Perhaps an example would help. After training with the sentence:
 
