@@ -13,7 +13,7 @@ First, I chose my training data. I picked the text of "Green Eggs and Ham" becau
 
 Second, I had to separate the text into sentences and into words. This is mostly as straightfowrard as it sounds, though I did decide that "Sam-I-Am" is one word rather than three, and that "Eat them! Eat them!" is two complete sentences, and even that "Say!" is a single sentence by itself. I then printed out the text and cut each sentence out as a single strip of paper.
 
-Third, I found a set of empty matchboxes that [my wife]([TODO] link to sciwriby) had left over from some earlier craft project. The same effect could be achieved with a set of envelopes to hold the slips of paper, but [matchboxes are canonical]([TODO] link to MENACE page). I wrote **\<start\>** on one box and left the rest blank for now.
+Third, I found a set of empty matchboxes that [my wife](https://emmabyrne.net/) had left over from some earlier craft project. The same effect could be achieved with a set of envelopes to hold the slips of paper, but [matchboxes are canonical](https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine). I wrote **\<start\>** on one box and left the rest blank for now.
 
 And then the fun can begin! I took the first sentence of the text, which happens to be: "I am Sam." I cut off the first word, "I", and put it into the **\<start\>** box. I then took the next blank box and wrote "I" on the top. The word "am" comes after "I", so I cut off "am" and put it in the **I** box. And I took another blank box and wrote "am" on it. I put the last word, "Sam" in the **am** box, because "Sam" comes after "am" in the sentence. And because "Sam" is followed by a full-stop, I stopped. First sentence complete!
 
