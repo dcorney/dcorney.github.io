@@ -13,6 +13,11 @@ permalink: /publications/
 <h3>Peer-reviewed papers</h3>
 
 <P>
+Augenstein, I.,  Baldwin, T.,  Cha, M.,  Chakraborty, T.,  Luca Ciampaglia, G.,  Corney, D.,  DiResta, R.,  Ferrara, E.,  Hale, S.,  Halevy, A.,  Hovy, E.,  Ji, H.,  Menczer, F.,  Miguez, R.,  Nakov, P.,  Scheufele, D.,  Sharma, S. and Zagni G. (2024) <a href="https://rdcu.be/dRFy0">Factuality challenges in the era of large language models and opportunities for fact-checking</a>, Nature Machine Intelligence.
+
+
+
+<P>
 
 Nakov, P., Corney, D., Hasanain, M., Alam, F., Elsayed, T., Barrón-Cedeño, A., Papotti, P., Shaar, S. and Da San Martino, G. (2021) 	<a href="https://arxiv.org/abs/2103.07769">"Automated Fact-Checking for Assisting Human Fact-Checkers"</a>. IJCAI 2021 Survey Track, Montreal, 2021.	
 
