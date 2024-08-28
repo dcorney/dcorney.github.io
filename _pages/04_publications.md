@@ -13,9 +13,7 @@ permalink: /publications/
 <h3>Peer-reviewed papers</h3>
 
 <P>
-Augenstein, I.,  Baldwin, T.,  Cha, M.,  Chakraborty, T.,  Luca Ciampaglia, G.,  Corney, D.,  DiResta, R.,  Ferrara, E.,  Hale, S.,  Halevy, A.,  Hovy, E.,  Ji, H.,  Menczer, F.,  Miguez, R.,  Nakov, P.,  Scheufele, D.,  Sharma, S. and Zagni G. (2024) <a href="https://rdcu.be/dRFy0">Factuality challenges in the era of large language models and opportunities for fact-checking</a>, Nature Machine Intelligence.
-
-
+Augenstein, I.,  Baldwin, T.,  Cha, M.,  Chakraborty, T.,  Luca Ciampaglia, G.,  Corney, D.,  DiResta, R.,  Ferrara, E.,  Hale, S.,  Halevy, A.,  Hovy, E.,  Ji, H.,  Menczer, F.,  Miguez, R.,  Nakov, P.,  Scheufele, D.,  Sharma, S. and Zagni G. (2024) <a href="https://rdcu.be/dRFy0">Factuality challenges in the era of large language models and opportunities for fact-checking</a>, Nature Machine Intelligence, 2024.
 
 <P>
 
