@@ -5,7 +5,7 @@ title: Factuality, LLMs and fact checking
 ---
 
 
-<img  src="/images/factuality/title_block.png" alt="Screenshot of paper heading: Nature Machine Intelligence. Factuality challenges in the era of large language models and opportunities for  fact-checking" width="400" align="right"/>
+<img  src="/images/factuality/title_block.png" alt="Screenshot of paper heading: Nature Machine Intelligence. Factuality challenges in the era of large language models and opportunities for  fact-checking" width="300" align="right"/>
 
 
 A few months after ChatGPT was launched, I joined a group of academics and practitioners with expertise in the intersection of disinformation, fact checking and AI. We were all concerned that making these new generative AI tools widely available would lead to a proliferation of false information online that would be hard to distinguish from reliable information. We spent some time discussing our worries but also our excitement at the possibilities that such models raise. Eventually, after much back and forth, we organised our ideas and polished our arguments, and I'm very proud that the resulting paper, "[Factuality challenges in the era of large language models and opportunities for fact-checking](https://rdcu.be/dRFy0)", has just been published in Nature Machine Intelligence. Rather than summarise the whole paper, I'd like to highlight just a few of the ideas.
