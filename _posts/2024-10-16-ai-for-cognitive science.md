@@ -42,14 +42,14 @@ Suppose you use a computer simulation to design a new bridge. Before you spend a
 And so if you build an algorithm that you believe has human-like intelligence, do you ask a computer scientist to test it? A machine learning engineer?
 No: you need an expert in intelligence, aka a psychologist or cognitive scientist. 
 
-And when you do that, you rapidly find that generating the correct answer to a law exam, medical exam or Jeopardy quiz questions. (Remember [Watson](https://en.wikipedia.org/wiki/IBM_Watson)?)
+And when you do that, you rapidly find that generating the correct answer to a law exam, medical exam or Jeopardy quiz questions[^3] isn't really a sign of intelligence, especially if the training set has been contaminated with model answers from similar tests.
 
 
 # Some conclusions
 
-Treating human behaviour as a black box, where one can only see the input (stimulus) and output (behaviour) was the core of [behaviorism](https://en.wikipedia.org/wiki/Behaviorism). While not disproven or abandoned, behaviorism was largely replaced by cognitive psychology from the 1950's, which has lead to huge leaps in our understanding of minds and how they work.
+Treating human behaviour as a black box, where one can only see the input (stimulus) and output (behaviour) was the core of [behaviorism](https://en.wikipedia.org/wiki/Behaviorism). While not disproven or abandoned, behaviorism was largely replaced by cognitive psychology from the 1950's. This lead to huge leaps in our understanding of minds and how they work, by explicitly attempting to model and understand the component processes like memory, perception, reasoning, metacognition and language use.
 
-LLMs are primarily trained on next-word-prediction and next-sentence-prediction from a given context. This is modelling human behaviour by only considering the input (context) and output (the next word or sentence produced), and ignoring aspects such as memory, perception, motivation and metacognition. It's (sometimes) fun and (sometimes) useful -- but it's not a road to intelligence of any kind.
+LLMs are primarily trained on next-word-prediction and next-sentence-prediction from a given context. This is modelling human behaviour by only considering the input (context) and output (the next word or sentence produced), and ignoring those mental processes that cognitive science explores. LLMs can be fun and useful -- but they're not a road to intelligence of any kind.
 
 <br>
 
@@ -58,3 +58,5 @@ LLMs are primarily trained on next-word-prediction and next-sentence-prediction 
 [^1]: Van Rooij, I., Guest, O., Adolfi, F., de Haan, R., Kolokolova, A., & Rich, P. (2024). Reclaiming AI as a theoretical tool for cognitive science. Computational Brain & Behavior, 1-21. https://link.springer.com/article/10.1007/s42113-024-00217-5
 
 [^2]: Bender, E. M., & Koller, A. (2020, July). Climbing towards NLU: On meaning, form, and understanding in the age of data. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 5185-5198).
+
+[^3]: Remember [Watson](https://en.wikipedia.org/wiki/IBM_Watson)?
