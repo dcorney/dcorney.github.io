@@ -25,7 +25,7 @@ github_username:  dcorney
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages']
+include: ['_pages','.well-known']
 markdown: kramdown
 # markdown was kramdown
 theme: minima
