@@ -6,7 +6,7 @@ title: Does using LLMs as fact checkers make things better or worse?
 
 TL;DR: Worse. 
 
-I've been developing AI tools to support (human) fact checkers for several years now. The [tools that Full Fact produces](https://fullfact.ai/) are now used every day by fact checkers [around the world](https://fullfact.org/blog/2024/dec/full-fact-ai-supports-african-fact-checkers/) to help monitor the media and find claims that might be worth checking, and to find repeats of known falsehoods. This helps them hold to powerful people to account and to push back against misinformation. 
+I've been developing AI tools to support (human) fact checkers for several years now. The [tools that Full Fact produces](https://fullfact.ai/) are now used every day by fact checkers [around the world](https://fullfact.org/blog/2024/dec/full-fact-ai-supports-african-fact-checkers/) to help monitor the media and find claims that might be worth checking, and to find repeats of known falsehoods. This helps them to hold powerful people to account and to push back against misinformation. 
 
 But one thing we have consistently avoided is using AI to actually check facts. With [hallucinations](https://rdcu.be/dRFy0), [bullshit](https://link.springer.com/article/10.1007/s10676-024-09775-5) and obscurity, it's hard to trust the output of ChatGPT (or its rivals) in a factual sense. They may or may not be useful for creative work, but if I don't already know the answer to a question then I'm not going to ask an LLM. Their output is limited to the statistically most likely sequence of words based on whatever websites they scraped, so every output should be prefaced with the phrase, "According to some random dude on Reddit..." 
 
