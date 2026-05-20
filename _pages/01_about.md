@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm David Corney - a father, husband, NLP-flavour data scientist and general person. 
+I'm David Corney - a dad, NLP-flavour data scientist and general person. 
 
 This is my personal webpage and this is me:
 
