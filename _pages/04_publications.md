@@ -15,13 +15,13 @@ permalink: /publications/
 
 
 <P>
-Sahnan, D., Corney, D., Larraz, I., Zagni, G., Miguez, R., Xie, Z., Gurevych, I., Churchill, E., Chakraborty, T. and Nakov, P. (2026). [Can LLMs Automate Fact-Checking Article Writing?](https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.644/136336). Transactions of the Association for Computational Linguistics, 14, 489-509.
+Sahnan, D., Corney, D., Larraz, I., Zagni, G., Miguez, R., Xie, Z., Gurevych, I., Churchill, E., Chakraborty, T. and Nakov, P. (2026). <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.644/136336">Can LLMs Automate Fact-Checking Article Writing?</a>. Transactions of the Association for Computational Linguistics, 14, 489-509.
 
 <P>
-Chen, Y., Schlichtkrull, M., Deng, Z., Corney, D., Asl, N., Salisbury, J., ... & Vlachos, A. (2025, November). [PLEDGETRACKER: A System for Monitoring the Fulfilment of Pledges](https://aclanthology.org/2025.emnlp-demos.64/). In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations (pp. 839-850).
+Chen, Y., Schlichtkrull, M., Deng, Z., Corney, D., Asl, N., Salisbury, J., ... & Vlachos, A. (2025, November). <a href="https://aclanthology.org/2025.emnlp-demos.64/">PLEDGETRACKER: A System for Monitoring the Fulfilment of Pledges</a>. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations (pp. 839-850).
 
 <P>
-Augenstein, I., Bakker, M., Chakraborty, T., Corney, D., Ferrara, E., Gurevych, I., Hale, S., Hovy, E., Ji, H., Larraz, I. and Menczer, F. (2025). [Community moderation and the new epistemology of fact checking on social media.](https://arxiv.org/abs/2505.20067) arXiv preprint arXiv:2505.20067.
+Augenstein, I., Bakker, M., Chakraborty, T., Corney, D., Ferrara, E., Gurevych, I., Hale, S., Hovy, E., Ji, H., Larraz, I. and Menczer, F. (2025). <a href="https://arxiv.org/abs/2505.20067">Community moderation and the new epistemology of fact checking on social media.</a> arXiv preprint arXiv:2505.20067.
 
 
 <P>
