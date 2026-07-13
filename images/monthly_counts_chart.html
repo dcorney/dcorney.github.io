@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Who's been standing up</title>
+
+    <!-- Standalone dependencies, loaded from the unpkg CDN (needs internet at
+         view time). Versions are pinned exactly and guarded with Subresource
+         Integrity hashes so a future CDN release can't silently change them.
+         The JSX below is pre-compiled to plain JS, so no Babel is shipped. -->
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"
+      integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"
+      integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"
+      integrity="sha384-/AfDwVDXNopzPvhxMPQ11y1OCpR6mVkWx47qzSwIiquvxkcMkZddEzDNtIOtfCpk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/recharts@2.15.0/umd/Recharts.js"
+      integrity="sha384-H15ZP78OvxlVElS6iYiDRT8299zdsy9sPHwz3Z6E6FagkYHICNdItER4Mr5nI8ty"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/papaparse@5.5.2/papaparse.min.js"
+      integrity="sha384-YNHmYmIriKcWf3y5yKEwjt+0pGv5NBpsVoy1Mj8kP4f5NC3eSemAeYKOWE5YVkd3"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      /* Theme mirrors the app's dark chart surface (see ClaimEvolutionChart.css /
+         Variables.css): cyan accent, muted secondary text, dashed grid, rounded
+         tooltip surface. */
+      :root {
+        --color-bg-canvas: #1a1a1a;
+        --color-bg-surface: #262626;
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #888888;
+        --color-border: #444444;
+        --color-accent: #00fce8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 32px;
+        background: var(--color-bg-canvas);
+        color: var(--color-text-primary);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      .monthly-chart {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: var(--color-bg-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 24px 28px 28px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .monthly-chart__header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .monthly-chart__title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--color-text-primary);
+      }
+
+      .monthly-chart__subtitle {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: var(--color-text-secondary);
+      }
+
+      .monthly-chart__controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .monthly-chart__toggle {
+        display: inline-flex;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .monthly-chart__toggle-btn {
+        appearance: none;
+        border: none;
+        background: transparent;
+        color: var(--color-text-secondary);
+        font-size: 13px;
+        padding: 8px 14px;
+        cursor: pointer;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+
+      .monthly-chart__toggle-btn + .monthly-chart__toggle-btn {
+        border-left: 1px solid var(--color-border);
+      }
+
+      .monthly-chart__toggle-btn:hover {
+        color: var(--color-text-primary);
+      }
+
+      .monthly-chart__toggle-btn--active {
+        background: var(--color-accent);
+        color: #101010;
+        font-weight: 600;
+      }
+
+      .monthly-chart__chart {
+        width: 100%;
+        height: 480px;
+      }
+
+      .monthly-chart__footnote {
+        margin-top: 16px;
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        text-align: center;
+      }
+
+      /* Tooltip surface — matches .claim-evolution-chart__tooltip */
+      .monthly-chart__tooltip {
+        background: var(--color-bg-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 12px 16px;
+        max-width: 320px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .monthly-chart__tooltip-header {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--color-text-primary);
+      }
+
+      .monthly-chart__tooltip-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+      }
+
+      .monthly-chart__tooltip-swatch {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        flex: none;
+      }
+
+      .monthly-chart__tooltip-name {
+        color: var(--color-text-primary);
+        text-transform: capitalize;
+        margin-right: auto;
+      }
+
+      .monthly-chart__tooltip-value {
+        color: var(--color-text-primary);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .monthly-chart__empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 480px;
+        color: var(--color-text-secondary);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Self-contained data source. To update the chart, edit these rows:
+         one `date` column plus one numeric column per person. -->
+    <script id="embedded-csv" type="text/plain">
+date,andy d,ed i,simon,david,alex,andy l,kate,hubert,cameron,ed d,dakota,james,nuve,adam,joe,phoebe,eddy c,nina
+Jan 2022,16,17,17,17,15,17,0,0,0,0,0,0,0,0,0,0,0,0
+Feb 2022,14,14,14,15,10,15,0,0,0,0,0,0,0,0,0,0,0,0
+Mar 2022,9,11,12,16,14,13,0,0,0,0,0,0,0,0,0,0,0,0
+Apr 2022,11,14,13,14,12,13,3,0,0,0,0,0,0,0,0,0,0,0
+May 2022,14,9,14,15,14,8,14,0,0,0,0,0,0,0,0,0,0,0
+Jun 2022,14,17,17,16,12,16,10,0,0,0,0,0,0,0,0,0,0,0
+Jul 2022,11,12,13,16,14,11,14,8,0,0,0,0,0,0,0,0,0,0
+Aug 2022,9,7,11,12,0,9,8,11,0,0,0,0,0,0,0,0,0,0
+Sep 2022,14,16,19,19,0,11,15,2,0,0,0,0,0,0,0,0,0,0
+Oct 2022,12,14,17,18,0,12,17,0,0,0,0,0,0,0,0,0,0,0
+Nov 2022,15,10,15,19,0,12,18,0,18,0,0,0,0,0,0,0,0,0
+Dec 2022,9,5,7,11,0,6,10,0,9,10,0,0,0,0,0,0,0,0
+Jan 2023,20,0,19,20,0,16,14,0,18,18,2,0,0,0,0,0,0,0
+Feb 2023,12,0,10,15,0,11,13,0,16,16,14,0,0,0,0,0,0,0
+Mar 2023,14,0,16,18,0,16,12,0,19,19,16,0,0,0,0,0,0,0
+Apr 2023,6,0,12,12,0,11,12,0,12,11,8,0,0,0,0,0,0,0
+May 2023,15,0,17,19,0,15,3,0,18,17,16,18,0,0,0,0,0,0
+Jun 2023,7,0,7,16,0,14,0,0,11,11,17,14,0,0,0,0,0,0
+Jul 2023,10,0,16,16,0,14,0,0,14,15,15,15,0,0,0,0,0,0
+Aug 2023,5,0,14,14,0,10,0,0,7,13,11,14,0,0,0,0,0,0
+Sep 2023,11,0,13,17,0,16,0,0,14,13,17,16,1,0,0,0,0,0
+Oct 2023,9,0,16,16,0,13,13,0,12,15,13,11,1,0,0,0,0,0
+Nov 2023,12,0,19,19,0,16,15,0,16,19,14,19,3,0,0,0,0,0
+Dec 2023,5,0,12,13,0,12,8,0,11,11,9,10,3,0,0,0,0,0
+Jan 2024,9,0,20,20,0,17,12,0,21,21,16,10,2,0,0,0,0,0
+Feb 2024,10,0,14,15,0,11,10,0,15,15,12,11,3,0,0,0,0,0
+Mar 2024,10,0,13,15,0,13,12,0,16,10,14,14,1,0,0,0,0,0
+Apr 2024,10,0,13,13,0,13,11,0,13,12,12,11,0,0,0,0,0,0
+May 2024,10,0,15,18,0,16,17,0,12,16,17,14,0,0,0,0,0,0
+Jun 2024,5,0,15,16,0,0,5,0,15,15,12,16,0,0,0,0,0,0
+Jul 2024,10,0,17,17,0,0,11,0,16,17,14,16,0,0,0,0,0,0
+Aug 2024,8,0,10,13,0,0,13,0,10,9,13,8,0,0,0,0,0,0
+Sep 2024,7,0,10,11,0,0,7,0,6,7,9,9,0,0,0,0,0,0
+Oct 2024,15,0,20,19,0,0,19,0,21,21,16,21,0,0,0,0,0,0
+Nov 2024,9,0,15,15,0,0,10,0,15,16,10,12,0,0,0,0,0,0
+Dec 2024,12,0,0,12,0,0,8,0,9,12,6,7,0,0,0,0,0,0
+Jan 2025,11,0,0,16,0,0,11,0,16,16,13,15,0,3,0,0,0,0
+Feb 2025,15,0,0,17,0,0,12,0,17,15,15,15,0,17,10,0,0,0
+Mar 2025,10,0,0,17,0,0,8,0,17,15,14,12,0,17,12,0,0,0
+Apr 2025,6,0,0,10,0,0,10,0,10,9,9,9,0,10,9,0,0,0
+May 2025,6,0,0,14,0,0,8,0,13,9,12,13,0,15,9,7,0,0
+Jun 2025,13,0,0,19,0,0,13,0,14,18,17,8,0,13,11,8,0,0
+Jul 2025,16,0,0,18,0,0,12,0,18,17,11,10,0,14,10,5,0,0
+Aug 2025,11,0,0,14,0,0,8,0,14,13,13,8,0,13,5,5,0,0
+Sep 2025,14,0,0,16,0,0,17,0,10,17,14,14,0,16,13,11,0,0
+Oct 2025,14,0,0,20,0,0,18,0,20,19,12,15,0,17,10,12,1,0
+Nov 2025,7,0,0,14,0,0,5,0,12,10,10,12,0,13,6,10,0,0
+Dec 2025,8,0,0,14,0,0,12,0,7,10,3,11,0,9,11,10,0,0
+Jan 2026,10,0,0,18,0,0,15,0,0,18,0,16,0,18,11,0,0,3
+Feb 2026,10,0,0,17,0,0,13,0,0,17,0,15,0,17,8,0,0,12
+Mar 2026,8,0,0,19,0,0,17,0,0,14,0,17,0,18,8,0,0,18
+Apr 2026,10,0,0,18,0,0,11,0,0,13,0,12,0,18,13,0,0,9
+May 2026,9,0,0,17,0,0,11,0,0,17,0,14,0,14,8,0,0,17
+Jun 2026,9,0,0,19,0,0,9,0,0,19,0,17,0,14,13,0,0,17
+Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
+    </script>
+
+    <script>
+      const {
+        LineChart,
+        Line,
+        AreaChart,
+        Area,
+        CartesianGrid,
+        XAxis,
+        YAxis,
+        Tooltip,
+        Legend,
+        ResponsiveContainer
+      } = Recharts;
+      const {
+        useMemo,
+        useState
+      } = React;
+      const PALETTE = ['#00fce8', '#ff51a9', '#00ff3b', '#ffff00', '#ff9900', '#b06bff', '#4d9fff', '#ff5a5d', '#2dd4bf', '#e879f9', '#b6ff3b', '#ffd24d', '#38bdf8', '#fb7185', '#8b5cf6', '#f59e0b', '#34d399', '#ff8c69'];
+      function parseCsv(csvText) {
+        const parsed = Papa.parse(csvText.trim(), {
+          header: true,
+          skipEmptyLines: true,
+          transformHeader: h => h.trim()
+        });
+        const fields = (parsed.meta.fields || []).map(f => f.trim());
+        if (fields.length === 0) return {
+          data: [],
+          series: []
+        };
+        const dateKey = fields[0];
+        const series = fields.slice(1);
+        const data = parsed.data.map(row => {
+          const point = {
+            [dateKey]: row[dateKey]
+          };
+          series.forEach(name => {
+            const value = Number(row[name]);
+            point[name] = Number.isFinite(value) && value > 0 ? value : 0;
+          });
+          return point;
+        });
+        return {
+          data,
+          series,
+          dateKey
+        };
+      }
+      function ChartTooltip({
+        active,
+        payload,
+        label,
+        activeSeries
+      }) {
+        if (!active || !payload || payload.length === 0) return null;
+        let rows = payload.filter(p => p.value > 0).sort((a, b) => b.value - a.value);
+        if (activeSeries) {
+          rows = rows.filter(p => p.dataKey === activeSeries);
+        }
+        if (rows.length === 0) return null;
+        return React.createElement("div", {
+          className: "monthly-chart__tooltip"
+        }, React.createElement("div", {
+          className: "monthly-chart__tooltip-header"
+        }, label), rows.map(row => React.createElement("div", {
+          className: "monthly-chart__tooltip-row",
+          key: row.dataKey
+        }, React.createElement("span", {
+          className: "monthly-chart__tooltip-swatch",
+          style: {
+            background: row.color
+          }
+        }), React.createElement("span", {
+          className: "monthly-chart__tooltip-name"
+        }, row.dataKey), React.createElement("span", {
+          className: "monthly-chart__tooltip-value"
+        }, row.value))));
+      }
+      function MonthlyCountsChart() {
+        const csvText = document.getElementById('embedded-csv').textContent;
+        const [hidden, setHidden] = useState({});
+        const [mode, setMode] = useState('line');
+        const [activeSeries, setActiveSeries] = useState(null);
+        const {
+          data: rawData,
+          series,
+          dateKey
+        } = useMemo(() => parseCsv(csvText), [csvText]);
+        const data = useMemo(() => {
+          if (mode === 'stacked') return rawData;
+          return rawData.map(row => {
+            const point = {
+              [dateKey]: row[dateKey]
+            };
+            series.forEach(name => {
+              point[name] = row[name] > 0 ? row[name] : null;
+            });
+            return point;
+          });
+        }, [rawData, series, dateKey, mode]);
+        const yearRanges = useMemo(() => {
+          const ranges = {};
+          series.forEach(name => {
+            let first = null;
+            let last = null;
+            rawData.forEach(row => {
+              if (row[name] > 0) {
+                const year = parseInt(String(row[dateKey]).trim().split(/\s+/).pop(), 10);
+                if (Number.isFinite(year)) {
+                  if (first === null || year < first) first = year;
+                  if (last === null || year > last) last = year;
+                }
+              }
+            });
+            ranges[name] = {
+              first,
+              last
+            };
+          });
+          return ranges;
+        }, [rawData, series, dateKey]);
+        const toggleSeries = name => setHidden(prev => ({
+          ...prev,
+          [name]: !prev[name]
+        }));
+        const makeIsolatedDot = (name, color) => props => {
+          const {
+            cx,
+            cy,
+            index
+          } = props;
+          if (cx == null || cy == null) return null;
+          const prev = index > 0 ? data[index - 1][name] : null;
+          const next = index < data.length - 1 ? data[index + 1][name] : null;
+          if (prev != null || next != null) return null;
+          return React.createElement("circle", {
+            key: `${name}-${index}`,
+            cx: cx,
+            cy: cy,
+            r: 2.5,
+            fill: color
+          });
+        };
+        const hasData = data.length > 0 && series.length > 0;
+        return React.createElement("div", {
+          className: "monthly-chart"
+        }, React.createElement("div", {
+          className: "monthly-chart__header"
+        }, React.createElement("div", null, React.createElement("h1", {
+          className: "monthly-chart__title"
+        }, "Monthly stand-ups by person"), React.createElement("p", {
+          className: "monthly-chart__subtitle"
+        }, hasData ? `${series.length} series across ${data.length} months` : 'No data to display')), React.createElement("div", {
+          className: "monthly-chart__controls"
+        }, React.createElement("div", {
+          className: "monthly-chart__toggle"
+        }, React.createElement("button", {
+          type: "button",
+          className: 'monthly-chart__toggle-btn' + (mode === 'line' ? ' monthly-chart__toggle-btn--active' : ''),
+          onClick: () => setMode('line')
+        }, "Lines"), React.createElement("button", {
+          type: "button",
+          className: 'monthly-chart__toggle-btn' + (mode === 'stacked' ? ' monthly-chart__toggle-btn--active' : ''),
+          onClick: () => setMode('stacked')
+        }, "Stacked area")))), hasData ? React.createElement("div", {
+          className: "monthly-chart__chart"
+        }, React.createElement(ResponsiveContainer, {
+          width: "100%",
+          height: "100%"
+        }, (() => {
+          const ChartRoot = mode === 'stacked' ? AreaChart : LineChart;
+          const sharedAxes = React.createElement(React.Fragment, null, React.createElement(CartesianGrid, {
+            strokeDasharray: "3 3",
+            stroke: "var(--color-border, #444)",
+            vertical: false
+          }), React.createElement(XAxis, {
+            dataKey: dateKey,
+            stroke: "var(--color-text-secondary, #888)",
+            fontSize: 11,
+            tickLine: false,
+            axisLine: {
+              stroke: 'var(--color-border, #444)'
+            },
+            angle: -45,
+            textAnchor: "end",
+            height: 60,
+            interval: "preserveStartEnd",
+            minTickGap: 12
+          }), React.createElement(YAxis, {
+            stroke: "var(--color-text-secondary, #888)",
+            fontSize: 11,
+            tickLine: false,
+            axisLine: false,
+            allowDecimals: false
+          }), React.createElement(Tooltip, {
+            content: React.createElement(ChartTooltip, {
+              activeSeries: activeSeries
+            }),
+            cursor: {
+              stroke: 'var(--color-border, #444)'
+            }
+          }), React.createElement(Legend, {
+            layout: "vertical",
+            align: "right",
+            verticalAlign: "middle",
+            width: 190,
+            wrapperStyle: {
+              paddingLeft: '16px',
+              fontSize: '12px',
+              lineHeight: '1.9',
+              cursor: 'pointer'
+            },
+            onClick: entry => toggleSeries(entry.dataKey),
+            formatter: value => {
+              const range = yearRanges[value];
+              const suffix = range && range.first != null ? ` (${range.first}-${range.last})` : '';
+              const isHidden = !!hidden[value];
+              return React.createElement("span", {
+                style: {
+                  textTransform: 'capitalize',
+                  opacity: isHidden ? 0.4 : 1,
+                  textDecoration: isHidden ? 'line-through' : 'none'
+                }
+              }, value, suffix);
+            }
+          }));
+          return React.createElement(ChartRoot, {
+            data: data,
+            margin: {
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 40
+            }
+          }, sharedAxes, series.map((name, i) => {
+            const color = PALETTE[i % PALETTE.length];
+            if (mode === 'stacked') {
+              return React.createElement(Area, {
+                key: name,
+                type: "monotone",
+                dataKey: name,
+                stackId: "counts",
+                stroke: color,
+                strokeWidth: 1,
+                fill: color,
+                fillOpacity: 0.75,
+                hide: !!hidden[name],
+                isAnimationActive: false,
+                onMouseEnter: () => setActiveSeries(name),
+                onMouseLeave: () => setActiveSeries(null)
+              });
+            }
+            return React.createElement(Line, {
+              key: name,
+              type: "monotone",
+              dataKey: name,
+              stroke: color,
+              strokeWidth: 2,
+              dot: makeIsolatedDot(name, color),
+              activeDot: {
+                r: 4,
+                onMouseEnter: () => setActiveSeries(name),
+                onMouseLeave: () => setActiveSeries(null)
+              },
+              hide: !!hidden[name],
+              connectNulls: false,
+              isAnimationActive: false,
+              onMouseEnter: () => setActiveSeries(name),
+              onMouseLeave: () => setActiveSeries(null)
+            });
+          }));
+        })())) : React.createElement("div", {
+          className: "monthly-chart__empty"
+        }, "Could not read any series from this CSV."), React.createElement("p", {
+          className: "monthly-chart__footnote"
+        }, "Each line tracks one person's monthly stand-up attendance over time. Click a name to show or hide their line or hover a month to see who was active and how often."));
+      }
+      ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(MonthlyCountsChart, null));
+    </script>
+  </body>
+</html>
