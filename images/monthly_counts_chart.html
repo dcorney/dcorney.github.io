@@ -195,6 +195,97 @@
         color: var(--color-text-secondary);
         font-size: 14px;
       }
+
+      /* Print: light background, landscape, no interactive controls. The chart
+         stays vector (SVG), so "Save as PDF" yields a scalable file. Hand it to
+         a print shop for RGB->CMYK; the brand neon palette will soften in CMYK. */
+      @media print {
+        @page {
+          size: landscape;
+          margin: 12mm;
+        }
+
+        /* Re-map the theme to ink-on-paper. */
+        :root {
+          --color-bg-canvas: #ffffff;
+          --color-bg-surface: #ffffff;
+          --color-text-primary: #1e1e1e;
+          --color-text-secondary: #333333;
+          --color-border: #cccccc;
+        }
+
+        body {
+          padding: 0;
+          background: #ffffff;
+          color: #1e1e1e;
+          /* Force chart fills/strokes to print rather than be dropped. */
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .monthly-chart {
+          max-width: none;
+          width: 100%;
+          padding: 0;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          background: #ffffff;
+        }
+
+        .monthly-chart__title,
+        .monthly-chart__subtitle,
+        .monthly-chart__footnote {
+          color: #1e1e1e;
+        }
+
+        /* Keep the whole figure — chart plus caption — on a single page. */
+        .monthly-chart {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        /* Tighten vertical spacing so the footnote stays on page one. */
+        .monthly-chart__header {
+          margin-bottom: 6px;
+        }
+        .monthly-chart__footnote {
+          margin-top: 6px;
+        }
+
+        /* Interactive-only affordances have no meaning on paper. */
+        .monthly-chart__controls {
+          display: none !important;
+        }
+
+        /* Fill the landscape page, leaving room for the title and footnote. */
+        .monthly-chart__chart {
+          height: 148mm;
+        }
+
+        /* Chart internals: dark ink on white regardless of CSS-var support. */
+        .recharts-cartesian-grid line {
+          stroke: #dddddd !important;
+        }
+        .recharts-cartesian-axis-line,
+        .recharts-cartesian-axis-tick-line {
+          stroke: #999999 !important;
+        }
+        .recharts-text {
+          fill: #1e1e1e !important;
+        }
+        .recharts-legend-item-text {
+          color: #1e1e1e !important;
+        }
+
+        /* Thicker lines / more solid fills read better on white paper. */
+        .recharts-line-curve {
+          stroke-width: 2.5px !important;
+        }
+        .recharts-area-area {
+          fill-opacity: 0.9 !important;
+        }
+      }
     </style>
   </head>
 
@@ -259,7 +350,7 @@ Mar 2026,8,0,0,19,0,0,17,0,0,14,0,17,0,18,8,0,0,18
 Apr 2026,10,0,0,18,0,0,11,0,0,13,0,12,0,18,13,0,0,9
 May 2026,9,0,0,17,0,0,11,0,0,17,0,14,0,14,8,0,0,17
 Jun 2026,9,0,0,19,0,0,9,0,0,19,0,17,0,14,13,0,0,17
-Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
+Jul 2026,9,0,0,14,0,0,2,0,0,12,0,8,0,11,10,0,0,12
     </script>
 
     <script>
@@ -276,10 +367,15 @@ Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
         ResponsiveContainer
       } = Recharts;
       const {
+        useEffect,
         useMemo,
         useState
       } = React;
+      // Screen palette: brand-led neon hues that pop on the dark surface.
       const PALETTE = ['#00fce8', '#ff51a9', '#00ff3b', '#ffff00', '#ff9900', '#b06bff', '#4d9fff', '#ff5a5d', '#2dd4bf', '#e879f9', '#b6ff3b', '#ffd24d', '#38bdf8', '#fb7185', '#8b5cf6', '#f59e0b', '#34d399', '#ff8c69'];
+      // Print palette: same hue order, but deeper/in-gamut so each series stays
+      // legible as ink on white paper and survives an RGB->CMYK conversion.
+      const PRINT_PALETTE = ['#0e7f96', '#c01a6e', '#178a3a', '#9a8600', '#c2600a', '#6b30b0', '#1f6fb3', '#c0392b', '#0f8a7d', '#a21caf', '#5e8a00', '#b8860b', '#2074a8', '#be3455', '#5b3fb0', '#b45309', '#0f7a52', '#b5502e'];
       function parseCsv(csvText) {
         const parsed = Papa.parse(csvText.trim(), {
           header: true,
@@ -342,8 +438,27 @@ Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
       function MonthlyCountsChart() {
         const csvText = document.getElementById('embedded-csv').textContent;
         const [hidden, setHidden] = useState({});
-        const [mode, setMode] = useState('line');
+        const [mode, setMode] = useState('stacked');
         const [activeSeries, setActiveSeries] = useState(null);
+        // Swap to the print palette while a print / "Save as PDF" is in progress,
+        // then revert. beforeprint/afterprint cover Chrome/Firefox/Edge; the
+        // matchMedia('print') listener is the fallback for Safari.
+        const [isPrinting, setIsPrinting] = useState(false);
+        useEffect(() => {
+          const mql = window.matchMedia('print');
+          const onChange = e => setIsPrinting(e.matches);
+          const before = () => setIsPrinting(true);
+          const after = () => setIsPrinting(false);
+          if (mql.addEventListener) mql.addEventListener('change', onChange);
+          window.addEventListener('beforeprint', before);
+          window.addEventListener('afterprint', after);
+          return () => {
+            if (mql.removeEventListener) mql.removeEventListener('change', onChange);
+            window.removeEventListener('beforeprint', before);
+            window.removeEventListener('afterprint', after);
+          };
+        }, []);
+        const palette = isPrinting ? PRINT_PALETTE : PALETTE;
         const {
           data: rawData,
           series,
@@ -411,7 +526,7 @@ Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
           className: "monthly-chart__header"
         }, React.createElement("div", null, React.createElement("h1", {
           className: "monthly-chart__title"
-        }, "Monthly stand-ups by person"), React.createElement("p", {
+        }, "Who's been standing up? Monthly stand-ups by person"), React.createElement("p", {
           className: "monthly-chart__subtitle"
         }, hasData ? `${series.length} series across ${data.length} months` : 'No data to display')), React.createElement("div", {
           className: "monthly-chart__controls"
@@ -496,7 +611,7 @@ Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
               bottom: 40
             }
           }, sharedAxes, series.map((name, i) => {
-            const color = PALETTE[i % PALETTE.length];
+            const color = palette[i % palette.length];
             if (mode === 'stacked') {
               return React.createElement(Area, {
                 key: name,
@@ -536,7 +651,8 @@ Jul 2026,3,0,0,5,0,0,2,0,0,5,0,2,0,4,4,0,0,4
           className: "monthly-chart__empty"
         }, "Could not read any series from this CSV."), React.createElement("p", {
           className: "monthly-chart__footnote"
-        }, "Each line tracks one person's monthly stand-up attendance over time. Click a name to show or hide their line or hover a month to see who was active and how often."));
+        }, "Each line tracks one person's monthly stand-up attendance over time. \
+        Thanks to Adam for the original design/code. All errors in the data are David's fault."));
       }
       ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(MonthlyCountsChart, null));
     </script>
