@@ -13,6 +13,8 @@ permalink: /publications/
 <h3>Peer-reviewed papers</h3>
 
 
+<P>
+Augenstein, I. ,Bakker, M.A. ,Chakraborty,T. , Corney, D., Ferrara, E. , Gurevych, I., Hale,  S., Hovy, E. , Ji, H. , Larraz, I. , Menczer,  F., Nakov, P. ,Papotti, P., Sahnan, D., Warren, G. and Zagni, G. (2026) <a href="https://www.pnas.org/doi/10.1073/pnas.2518033123">Promises and pitfalls of community moderation on social media</a>, Proc. Natl. Acad. Sci. U.S.A. 123 (48) e2518033123]
 
 <P>
 Sahnan, D., Corney, D., Larraz, I., Zagni, G., Miguez, R., Xie, Z., Gurevych, I., Churchill, E., Chakraborty, T. and Nakov, P. (2026). <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.644/136336">Can LLMs Automate Fact-Checking Article Writing?</a>. Transactions of the Association for Computational Linguistics, 14, 489-509.
