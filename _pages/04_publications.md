@@ -14,24 +14,24 @@ permalink: /publications/
 
 
 <P>
-Augenstein, I. ,Bakker, M.A. ,Chakraborty,T. , Corney, D., Ferrara, E. , Gurevych, I., Hale,  S., Hovy, E. , Ji, H. , Larraz, I. , Menczer,  F., Nakov, P. ,Papotti, P., Sahnan, D., Warren, G. and Zagni, G. (2026) <a href="https://www.pnas.org/doi/10.1073/pnas.2518033123">Promises and pitfalls of community moderation on social media</a>, Proc. Natl. Acad. Sci. U.S.A. 123 (48) e2518033123]
+Augenstein, I., Bakker, M.A., Chakraborty, T., Corney, D., Ferrara, E., Gurevych, I., Hale, S., Hovy, E., Ji, H., Larraz, I., Menczer, F., Nakov, P., Papotti, P., Sahnan, D., Warren, G. and Zagni, G. (2026) <a href="https://www.pnas.org/doi/10.1073/pnas.2518033123">Promises and pitfalls of community moderation on social media</a>, Proc. Natl. Acad. Sci. U.S.A. 123 (48) e2518033123
 
 <P>
 Sahnan, D., Corney, D., Larraz, I., Zagni, G., Miguez, R., Xie, Z., Gurevych, I., Churchill, E., Chakraborty, T. and Nakov, P. (2026). <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.644/136336">Can LLMs Automate Fact-Checking Article Writing?</a>. Transactions of the Association for Computational Linguistics, 14, 489-509.
 
 <P>
-Chen, Y., Schlichtkrull, M., Deng, Z., Corney, D., Asl, N., Salisbury, J., ... & Vlachos, A. (2025, November). <a href="https://aclanthology.org/2025.emnlp-demos.64/">PLEDGETRACKER: A System for Monitoring the Fulfilment of Pledges</a>. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations (pp. 839-850).
+Chen, Y., Schlichtkrull, M., Deng, Z., Corney, D., Asl, N., Salisbury, J., Dudfield, A. and Vlachos, A. (2025, November). <a href="https://aclanthology.org/2025.emnlp-demos.64/">PLEDGETRACKER: A System for Monitoring the Fulfilment of Pledges</a>. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations (pp. 839-850).
 
 <P>
-Augenstein, I., Bakker, M., Chakraborty, T., Corney, D., Ferrara, E., Gurevych, I., Hale, S., Hovy, E., Ji, H., Larraz, I. and Menczer, F. (2025). <a href="https://arxiv.org/abs/2505.20067">Community moderation and the new epistemology of fact checking on social media.</a> arXiv preprint arXiv:2505.20067.
+Augenstein, I., Bakker, M., Chakraborty, T., Corney, D., Ferrara, E., Gurevych, I., Hale, S., Hovy, E., Ji, H., Larraz, I. and Menczer, F. (2025). <a href="https://arxiv.org/abs/2505.20067">Community moderation and the new epistemology of fact checking on social media.</a> Preprint version arXiv:2505.20067 -- full version now in PNAS! See above
 
 
 <P>
-Augenstein, I.,  Baldwin, T.,  Cha, M.,  Chakraborty, T.,  Luca Ciampaglia, G.,  Corney, D.,  DiResta, R.,  Ferrara, E.,  Hale, S.,  Halevy, A.,  Hovy, E.,  Ji, H.,  Menczer, F.,  Miguez, R.,  Nakov, P.,  Scheufele, D.,  Sharma, S. and Zagni G. (2024) <a href="https://rdcu.be/dRFy0">Factuality challenges in the era of large language models and opportunities for fact-checking</a>, Nature Machine Intelligence, 2024.
+Augenstein, I.,  Baldwin, T.,  Cha, M.,  Chakraborty, T.,  Luca Ciampaglia, G.,  Corney, D.,  DiResta, R.,  Ferrara, E.,  Hale, S.,  Halevy, A.,  Hovy, E.,  Ji, H.,  Menczer, F.,  Miguez, R.,  Nakov, P.,  Scheufele, D.,  Sharma, S. and Zagni G. (2024) <a href="https://www.nature.com/articles/s42256-024-00881-z">Factuality challenges in the era of large language models and opportunities for fact-checking</a>, Nature Machine Intelligence, 6, pp.852–863.
 
 <P>
 
-Nakov, P., Corney, D., Hasanain, M., Alam, F., Elsayed, T., Barrón-Cedeño, A., Papotti, P., Shaar, S. and Da San Martino, G. (2021) 	<a href="https://arxiv.org/abs/2103.07769">"Automated Fact-Checking for Assisting Human Fact-Checkers"</a>. IJCAI 2021 Survey Track, Montreal, 2021.	
+Nakov, P., Corney, D., Hasanain, M., Alam, F., Elsayed, T., Barrón-Cedeño, A., Papotti, P., Shaar, S. and Da San Martino, G. (2021) <a href="https://arxiv.org/abs/2103.07769">"Automated Fact-Checking for Assisting Human Fact-Checkers"</a>. IJCAI 2021 Survey Track, Montreal, 2021.	
 
 <P>
 
